@@ -1,0 +1,44 @@
+@reportbackgroundcolor: #c0c0c0;
+@reportbackgroundtextalign: center;
+@toolboxbackgroundcolor: #5cb85c;
+@toolboxtextalign: center;
+@borderradius: 5px;
+@shadow: #888;
+@layoutbackground: white;
+@tooboxwidth: 20%;
+@layoutwidth: 78%;
+@layoutheight: 800px;
+.viz-report-container{
+  background-color: @reportbackgroundcolor;
+  text-align: @reportbackgroundtextalign;
+  position: relative;
+}
+.shadow(){//dont show this
+    -moz-box-shadow: 5px 5px 2px @shadow;
+    -webkit-box-shadow: 5px 5px 2px @shadow;
+    box-shadow: 5px 5px 2px @shadow;
+}
+.viz-toolbox{
+    .shadow;
+    border-radius: @borderradius;
+    background-color: @toolboxbackgroundcolor;
+    text-align: @toolboxtextalign;
+    position: absolute;
+    top: 65px;
+    left: 5px;
+    width: @tooboxwidth;
+}
+.viz-toolbox img{
+    width: 40px;
+    height: 40px;
+}
+.viz-layout{
+    .shadow;
+    border-radius: @borderradius;
+    background-color: @layoutbackground;
+    position: absolute;
+    top: 65px;
+    right: 5px;
+    width: @layoutwidth;
+    height: @layoutheight;
+}

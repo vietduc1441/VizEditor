@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/51/VizEditor/VizEditor/widget/module
+END
+utils.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/49/VizEditor/VizEditor/widget/module/utils.js
+END
+mendixServices.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/49/VizEditor/VizEditor/widget/module/mendixServices.js
+END
+vizDirectives.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/70/VizEditor/VizEditor/widget/module/vizDirectives.js
+END
+vizProviders.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/67/VizEditor/VizEditor/widget/module/vizProviders.js
+END
+vizApp.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/71/VizEditor/VizEditor/widget/module/vizApp.js
+END

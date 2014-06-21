@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/51/VizEditor/VizEditor/widget/lib
+END
+lvl-uuid.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/54/VizEditor/VizEditor/widget/lib/lvl-uuid.js
+END
+require.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/61/VizEditor/VizEditor/widget/lib/require.js
+END
+d3.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/49/VizEditor/VizEditor/widget/lib/d3.min.js
+END
+angular.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/47/VizEditor/VizEditor/widget/lib/angular.js
+END
+lvl-drag-drop.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/69/VizEditor/VizEditor/widget/lib/lvl-drag-drop.js
+END
+ui-bootstrap-tpls-0.9.0.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/51/VizEditor/VizEditor/widget/lib/ui-bootstrap-tpls-0.9.0.js
+END
+underscore.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/7f9fc814-6a3a-463d-bca1-c048ff210c85/!svn/ver/49/VizEditor/VizEditor/widget/lib/underscore.js
+END

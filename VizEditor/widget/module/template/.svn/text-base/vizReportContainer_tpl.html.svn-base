@@ -1,0 +1,18 @@
+<div class="viz-report-container" style="height:800px;width:100%">
+    <div>{{book.bookname}}</div>
+    <tabset>
+        <tab ng-repeat="sheet in sheets">
+            <!-- Heading of the tab-->
+            <tab-heading>
+                <i class="glyphicon glyphicon-list-alt"></i> {{sheet.sheetname}}
+            </tab-heading>
+            <!-- Main content of the tab-->
+            <viz-report-layout sheet="sheet"></viz-report-layout>
+        </tab>
+    </tabset>
+    <viz-toolbox></viz-toolbox>
+</div>
+
+
+
+

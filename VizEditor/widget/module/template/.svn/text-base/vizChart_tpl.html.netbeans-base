@@ -1,0 +1,12 @@
+<div ng-style="{left: widget.x+'px',top: widget.y+'px', position: 'absolute'}" draggable>
+    <tabset >
+            <tab style="width: 80%" >
+                <tab-heading>Visualization</tab-heading>
+                <div visualization widget="widget" resizer></div>
+            </tab>
+            <tab style="width: 20%">
+                 <tab-heading>Config</tab-heading>
+                <viz-chart-config widget="widget"/>
+            </tab>
+    </tabset>
+</div>
