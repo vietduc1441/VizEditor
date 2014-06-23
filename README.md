@@ -2,8 +2,11 @@ VizEditor
 =========
 
 Visualization tool in which I demonstrate how I want a visualization tool works:
+
 -configure the datasource
+
 -drag/drop visualization type
+
 -config and see result 
 
 
