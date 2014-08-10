@@ -10,9 +10,9 @@ https://teamserver.sprintr.com/7f9fc814-6a3a-463d-bca1-c048ff210c85
 2013-12-30T23:12:50.979601Z
 52
 d.bui@capegroep.nl
-
-
-
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -39,7 +39,7 @@ file
 d.bui@capegroep.nl
 has-props
 
-svn:special svn:externals svn:needs-lock
+
 
 
 

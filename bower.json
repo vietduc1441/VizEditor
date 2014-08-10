@@ -1,0 +1,14 @@
+{
+  "name": "VizEditor",
+  "version": "1.0",
+  "homepage": "https://github.com/vietduc1441/VizEditor",
+  "authors": [
+    "vietduc1441 <vietduc1441@yahoo.com>"
+  ],
+  "description": "Viz Editor",
+  "keywords": [
+    "Visualization"
+  ],
+  "license": "MIT",
+  "private": true
+}

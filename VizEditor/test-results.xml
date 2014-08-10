@@ -1,30 +1,15 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Chrome 33.0.1750 (Windows Vista)" package="" timestamp="2014-01-19T10:09:26" id="0" hostname="vietduc1441-PC" tests="12" errors="0" failures="0" time="38.005">
+  <testsuite name="Chrome 37.0.2062 (Windows Vista)" package="" timestamp="2014-08-10T15:04:04" id="0" hostname="vietduc1441" tests="0" errors="1" failures="0" time="0">
     <properties>
-      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.29 Safari/537.36"/>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.58 Safari/537.36"/>
     </properties>
-    <testcase name="True should be True" time="0.021" classname="Chrome 33.0.1750 (Windows Vista).Test Karma setup:"/>
-    <testcase name="Scope should have widgets as an array" time="0.105" classname="Chrome 33.0.1750 (Windows Vista).Test VizApp"/>
-    <testcase name="A sheet could get a list of widget by &apos;widgets&apos; attribute" time="0.049" classname="Chrome 33.0.1750 (Windows Vista).Test VizApp"/>
-    <testcase name="Default bookname should be &apos;My first book&apos;" time="2.833" classname="Chrome 33.0.1750 (Windows Vista).Test vizReport -&gt; Report Container"/>
-    <testcase name="We should have 3 tabs" time="5" classname="Chrome 33.0.1750 (Windows Vista).Test vizReport -&gt; Report Container"/>
-    <testcase name="Default background text of Toolbox should contain &apos;Toolbox&apos;" time="3.999" classname="Chrome 33.0.1750 (Windows Vista).Test vizReport -&gt; Toolbox"/>
-    <testcase name="A linechart directive is existed" time="5" classname="Chrome 33.0.1750 (Windows Vista).Test Linechart directives -&gt; lineChart"/>
-    <testcase name="A linechart should have 2 tabs" time="5.001" classname="Chrome 33.0.1750 (Windows Vista).Test Linechart directives -&gt; lineChart"/>
-    <testcase name="A linechart should have tab &quot;Config&quot;" time="5.001" classname="Chrome 33.0.1750 (Windows Vista).Test Linechart directives -&gt; lineChart"/>
-    <testcase name="A linechart should have tab &quot;Visualization&quot;" time="5" classname="Chrome 33.0.1750 (Windows Vista).Test Linechart directives -&gt; lineChart"/>
-    <testcase name="Visualization directive should exist" time="2.996" classname="Chrome 33.0.1750 (Windows Vista).Test Visualization directive"/>
-    <testcase name="vizchartconfig directive should exist" time="3" classname="Chrome 33.0.1750 (Windows Vista).Test vizchartconfig directive"/>
-    <system-out><![CDATA[Chrome 33.0.1750 (Windows Vista) SLOW 2.833 secs: Test vizReport -> Report Container Default bookname should be 'My first book'
-,Chrome 33.0.1750 (Windows Vista) SLOW 5 secs: Test vizReport -> Report Container We should have 3 tabs
-,Chrome 33.0.1750 (Windows Vista) SLOW 3.999 secs: Test vizReport -> Toolbox Default background text of Toolbox should contain 'Toolbox'
-,Chrome 33.0.1750 (Windows Vista) SLOW 5 secs: Test Linechart directives -> lineChart A linechart directive is existed
-,Chrome 33.0.1750 (Windows Vista) SLOW 5.001 secs: Test Linechart directives -> lineChart A linechart should have 2 tabs
-,Chrome 33.0.1750 (Windows Vista) SLOW 5.001 secs: Test Linechart directives -> lineChart A linechart should have tab "Config"
-,Chrome 33.0.1750 (Windows Vista) SLOW 5 secs: Test Linechart directives -> lineChart A linechart should have tab "Visualization"
-,Chrome 33.0.1750 (Windows Vista) SLOW 2.996 secs: Test Visualization directive Visualization directive should exist
-,Chrome 33.0.1750 (Windows Vista) SLOW 3 secs: Test vizchartconfig directive vizchartconfig directive should exist
+    <system-out><![CDATA[Chrome 37.0.2062 (Windows Vista) ERROR
+	Uncaught ReferenceError: angular is not defined
+	at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/lvl-drag-drop.js:1
+,Chrome 37.0.2062 (Windows Vista) ERROR
+	Uncaught ReferenceError: angular is not defined
+	at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/lvl-uuid.js:6
 
 ]]></system-out>
     <system-err/>

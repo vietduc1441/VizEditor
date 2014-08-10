@@ -17,6 +17,7 @@
     "karma-jasmine": "*",
     "karma-chrome-launcher": "*",
     "karma-firefox-launcher": "*",
-    "karma-ng-html2js-preprocessor": "*"
+    "karma-ng-html2js-preprocessor": "*",
+    "karma-less-preprocessor": "~0.2.2"
   }
 }

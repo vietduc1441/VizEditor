@@ -1,2 +1,2 @@
-angular.module("VizEditor",[])
+angular.module("VizEditor",[]);
     
