@@ -5,27 +5,29 @@ require.config({
 		"ui-bootstrap": '../lib/angular-bootstrap/ui-bootstrap',
 		"underscore": '../lib/underscore/underscore',
         "d3":'../lib/d3/d3.min',
-        "mxLib":'../lib/mxgraph/mxClient'
+        "mxLib":'../lib/mxgraph/mxClient',
+        "lib":'../lib'
 	},
 	shim: {
 		'angular' : {'exports' : 'angular'},
-        'underscore': {exports: '_'},
+        'underscore': {exports: 'd_'},
         'mxLib': {exports: 'mxGraph',
                 init:function(){
                   return{
                       mxActor: mxActor,
 					  mxCell: mxCell,
 					  mxClient: mxClient                 
-                  }  
+                  };
                 }}
     },
 	priority: [
 		"angular"
 	]
 });
-require(["angular","underscore","d3","mxLib"],function(angular,underscore,d3,mxGraph){
-    var a= angular;
-    var u= underscore;
-    var d3= d3;
-	var mxc=mxGraph;
-})
+window.name = "NG_DEFER_BOOTSTRAP!";
+require(["angular","underscore","d3","vizApp"],function(angular,underscore,d3,vizApp){
+    var $html = angular.element(document.getElementsByTagName('html')[0]);
+	angular.element().ready(function() {
+		angular.resumeBootstrap([vizApp['name']]);
+	});
+});

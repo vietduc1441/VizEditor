@@ -1,2 +1,5 @@
-angular.module("VizEditor",[]);
+define([],function(){
+    angular.module("VizEditor",[]);
+})
+
     

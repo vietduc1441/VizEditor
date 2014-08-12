@@ -1,4 +1,5 @@
-angular.module("vizService",[])
+define(["angular"],function(angular){
+    angular.module("vizService",[])
         .factory("changeMonitor",function(){
             return {
                 getWatchColObj: function(scope){
@@ -21,3 +22,4 @@ angular.module("vizService",[])
                 }                
             };
         })
+})

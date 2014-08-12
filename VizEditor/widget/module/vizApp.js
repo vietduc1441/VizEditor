@@ -1,5 +1,7 @@
-var vizApp= angular.module("vizApp",["vizDirectives"]);
-vizApp.controller("vizCtrl",function($scope){
+"use strict"
+define(["angular","vizDirectives"],function(angular){
+    var vizApp= angular.module("vizApp",["vizDirectives"]);
+    vizApp.controller("vizCtrl",function($scope){
     this.width="800px";
     this.height="600px";
     $scope.book={
@@ -50,4 +52,6 @@ vizApp.controller("vizCtrl",function($scope){
         });
     });
     
+    });
+    return vizApp;
 });
