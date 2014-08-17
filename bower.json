@@ -25,5 +25,8 @@
     "d3": "~3.4.11",
     "require": "*",
     "underscore": "~1.6.0"
+  },
+  "devDependencies": {
+    "angularjs-nvd3-directives": "~0.0.7"
   }
 }

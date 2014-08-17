@@ -1,12 +1,11 @@
 "use strict";
 define(["angular",
-    "charts/base",
     "utils",
     "vizProviders",
     "lib/angular-bootstrap/ui-bootstrap-tpls.min",
     "lib/lvl-drag-drop",
     "lib/lvl-uuid"],
-    function(angular,VizChart){
+    function(angular){
         angular.module('vizDirectives', ['utils','vizDirectives.layout']);
         //http://angular-ui.github.io/bootstrap/
         angular.module('vizDirectives.layout',['vizService','ui.bootstrap','lvl.directives.dragdrop'])
@@ -39,7 +38,7 @@ define(["angular",
                     $scope.shapes.push({
                         shapename: 'Rectangular',
                         imgsrc:'widget/icons/rectangular.png'
-                    })
+                    });
                 },
                 templateUrl: "widget/module/template/vizToolbox_tpl.html"
             };
@@ -92,7 +91,7 @@ define(["angular",
                     $scope.setNewSize=function(offsetWidth, offsetHeight){
                         originalHeight+=offsetHeight;
                         originalWidth+=offsetWidth;
-                    }
+                    };
                 },
                 templateUrl:"widget/module/template/vizChart_tpl.html"
             };
@@ -114,31 +113,40 @@ define(["angular",
                 },
                 link: function(scope, element, attrs, ctr){
                     var widget=scope.widget;
-                    var chart= VizChart[widget.type].create();
+                    var chart=null;
+                    require(["charts/"+widget.type],
+                    function(VizChart){                        
+                    chart= VizChart[widget.type].create();
                     chart.setWidth(widget.width);
                     chart.setHeight(widget.height);
                     chart.createChartContainer(element[0],{x:0,y:0});
+                    
                     scope.$watch('widget.width+widget.height',function(){
                         chart.resize(widget.width,widget.height);
                         scope.chartstyle={
                             width: widget.width+'px',
                             height: widget.height+'px'
                             };
-                    });
+                        });
                     scope.$watchCollection(
                         changeMonitor.getWatchColObj,//any change in config
                         function(){
                             if (!widget.data) {//no Data
                                 chart.visualizeExampleData();
-                            }else{
+                            }else if(chart){
                                 chart.setCategory(widget.selected_categories[0]);
                                 chart.sortCategory(widget.category_need_sorted);
                                 chart.setSeries(widget.selected_series);
                                 chart.setData(widget.data);
                                 chart.refresh();
+                            }
+                            else{
+                                
                             };
                         });
-
+                    scope.$digest();
+                    });
+                    
                 },
                 template: "<div ng-style='chartstyle'></div>"
             };

@@ -3,9 +3,11 @@
  */
 //http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
 //http://addyosmani.com/writing-modular-js/
-(function baseChart(viz){
+define(["charts/core"],
+    function(viz){
     'use strict';
     viz._BaseChart={
+        author: "v.d.bui",
         name: 'baseChart',
         chartName: '',
         iconUrl: '',
@@ -95,4 +97,4 @@
         }
     };
     return viz;
-})(VizChart);
+});

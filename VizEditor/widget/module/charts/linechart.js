@@ -1,6 +1,8 @@
-(function lineChart(viz){
+define(["charts/base"],
+    function(viz){
     'use strict';
-    function LineChart(){
+    var LineChart=viz.extend(
+        function(){
         this.name='linechart';
         this.cssClass='LineChart';
         this.colors=d3.scale.category20();
@@ -18,7 +20,7 @@
         };
         this.sortCategory=function(needSort){
             this.category_need_sorted=needSort;
-        }
+        };
         this.validateXAttribute= function(category){
             if (category.isMeasure)
                 return true;
@@ -114,12 +116,12 @@
             }
                                     
             processedData=d3.nest()
-                    .key(function(d){return d[xAttr]})
+                    .key(function(d){return d[xAttr];})
                     .rollup(function(leaves) {
                                     var sumup={};
                                     for(var leaf in leaves[0]){
                                         if (series.indexOf(leaf)>=0)
-                                            sumup[leaf]=d3.sum(leaves,function(d){return d[leaf]});
+                                            sumup[leaf]=d3.sum(leaves,function(d){return d[leaf];});
                                     }
                                     return sumup;
                                 })
@@ -137,15 +139,13 @@
             }, this);
             return filteredData;
         };
-    }
+    });
     
-    LineChart.prototype=Object.create(viz._BaseChart);
-    LineChart.prototype.constructor=LineChart;
     function createNew(){
         return new LineChart();
     };
     viz.LineChart={
         create:createNew
     };
-    return viz;
-})(VizChart);
+    return viz;    
+});
