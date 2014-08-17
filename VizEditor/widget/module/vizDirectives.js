@@ -1,6 +1,6 @@
 "use strict";
 define(["angular",
-    "chart/VizChart",
+    "charts/base",
     "utils",
     "vizProviders",
     "lib/angular-bootstrap/ui-bootstrap-tpls.min",

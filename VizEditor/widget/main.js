@@ -4,21 +4,20 @@ require.config({
 		"angular": '../lib/angular/angular',
 		"ui-bootstrap": '../lib/angular-bootstrap/ui-bootstrap',
 		"underscore": '../lib/underscore/underscore',
-        "d3":'../lib/d3/d3.min',
+        "d3":'../lib/d3/d3.min',//dont need to use shim for underscore and d3 as it register as amd module with a module name
         "mxLib":'../lib/mxgraph/mxClient',
         "lib":'../lib'
 	},
 	shim: {
 		'angular' : {'exports' : 'angular'},
-        'underscore': {exports: 'd_'},
-        'mxLib': {exports: 'mxGraph',
-                init:function(){
-                  return{
-                      mxActor: mxActor,
-					  mxCell: mxCell,
-					  mxClient: mxClient                 
-                  };
-                }}
+                'mxLib': {exports: 'mxGraph',
+                        init:function(){
+                          return{
+                              mxActor: mxActor,
+                                                  mxCell: mxCell,
+                                                  mxClient: mxClient                 
+                          };
+                        }}
     },
 	priority: [
 		"angular"
