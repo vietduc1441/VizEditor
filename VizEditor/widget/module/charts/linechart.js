@@ -1,6 +1,7 @@
-define(["charts/base"],
-    function(viz){
+define(["charts/base","nvd3"],
+    function(viz, nv){
     'use strict';
+    
     var LineChart=viz.extend(
         function(){
         this.name='linechart';
