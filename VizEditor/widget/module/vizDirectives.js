@@ -98,7 +98,6 @@ define(["angular",
         })
         .directive('visualization', function(changeMonitor){
             return{
-                replace: true,
                 restrict: 'EA',
                 scope: {
                     widget:"="
@@ -116,39 +115,52 @@ define(["angular",
                     var chart=null;
                     require(["charts/"+widget.type],
                     function(VizChart){                        
-                    chart= VizChart[widget.type].create();
-                    chart.setWidth(widget.width);
-                    chart.setHeight(widget.height);
-                    chart.createChartContainer(element[0],{x:0,y:0});
-                    
-                    scope.$watch('widget.width+widget.height',function(){
-                        chart.resize(widget.width,widget.height);
-                        scope.chartstyle={
-                            width: widget.width+'px',
-                            height: widget.height+'px'
-                            };
-                        });
-                    scope.$watchCollection(
-                        changeMonitor.getWatchColObj,//any change in config
-                        function(){
-                            if (!widget.data) {//no Data
-                                chart.visualizeExampleData();
-                            }else if(chart){
-                                chart.setCategory(widget.selected_categories[0]);
-                                chart.sortCategory(widget.category_need_sorted);
-                                chart.setSeries(widget.selected_series);
-                                chart.setData(widget.data);
-                                chart.refresh();
-                            }
-                            else{
-                                
-                            };
+                        chart= VizChart[widget.type].create();
+                        chart.margin({left: 0})  //Adjust chart margins to give the x-axis some breathing room.
+                            .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!
+                            .transitionDuration(350)  //how fast do you want the lines to transition?
+                            .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
+                            .showYAxis(true)        //Show the y-axis
+                            .showXAxis(true);        //Show the x-axis
+
+                        chart.xAxis     //Chart x-axis settings
+                              .axisLabel('Time (ms)')
+                              .tickFormat(d3.format(',r'));
+
+                        chart.yAxis     //Chart y-axis settings
+                            .axisLabel('Voltage (v)')
+                            .tickFormat(d3.format('.02f'));
+                        chart.setData();
+                        chart.render(element.find("svg")[0]);
+
+                        scope.$watch('widget.width+widget.height',function(){
+    //                        chart.resize(widget.width,widget.height);
+    //                        scope.chartstyle={
+    //                            width: widget.width+'px',
+    //                            height: widget.height+'px'
+    //                            };
+                            });
+                        scope.$watchCollection(
+                            changeMonitor.getWatchColObj,//any change in config
+                            function(){
+                                if (!widget.data) {//no Data
+    //                                chart.visualizeExampleData();
+                                }else if(chart){
+    //                                chart.setCategory(widget.selected_categories[0]);
+    //                                chart.sortCategory(widget.category_need_sorted);
+    //                                chart.setSeries(widget.selected_series);
+    //                                chart.setData(widget.data);
+    //                                chart.refresh();
+                                }
+                                else{
+
+                                };
                         });
                     scope.$digest();
                     });
                     
                 },
-                template: "<div ng-style='chartstyle'></div>"
+                template: "<div ng-style='chartstyle'></div><svg></svg>"
             };
         })
         .directive('vizChartConfig',function(){//TODO: test
