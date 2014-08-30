@@ -11,7 +11,7 @@ define(["angular","vizDirectives"],function(angular){
     };
     $scope.sheets=[
         {id:1, sheetname:"Sheet 1", content: "Sheet1 content", widgetids: [1,2], oql:{id: 1, amount: null, query: "oql query to get data" }},
-       // {id:2, sheetname:"Sheet 2", content: "Sheet2 content", widgetids: [3, 5, 6], oql:{id: 2, amount: null, query: "oql query to get data" }},
+//        {id:2, sheetname:"Sheet 2", content: "Sheet2 content", widgetids: [3, 5, 6], oql:{id: 2, amount: null, query: "oql query to get data" }},
        // {id:3, sheetname:"Sheet 3", content: "Sheet3 content", widgetids: [2, 8, 7], oql:{id: 3, amount: null, query: "oql query to get data" }}
     ];
     $scope.widgets=[{id:1, type: "LineChart", x: 200, y: 230, width: 500, height: 300, 

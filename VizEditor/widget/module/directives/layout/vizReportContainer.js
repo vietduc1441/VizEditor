@@ -1,8 +1,12 @@
 define(["angular",
         "lib/angular-bootstrap/ui-bootstrap-tpls.min",
-        "directives/layout/vizToolBox"],function(angular){
-    angular.module("vizDirectives.layout.vizReportContainer",["ui.bootstrap",
-                                                              "vizDirectives.layout.vizToolBox"])
+        "directives/layout/vizToolBox"
+        ],
+    function(angular){
+    angular.module("vizDirectives.layout.vizReportContainer",[
+                                                              "ui.bootstrap",
+                                                              "vizDirectives.layout.vizToolBox"
+                                                            ])
             .directive('vizReportContainer', function () {
                        return {
                                restrict: "EA",
