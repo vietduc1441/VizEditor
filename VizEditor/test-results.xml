@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="Chrome 38.0.2125 (Windows Vista)" package="" timestamp="2014-08-30T19:35:01" id="0" hostname="vietduc1441" tests="0" errors="1" failures="0" time="0">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.24 Safari/537.36"/>
+    </properties>
+    <system-out><![CDATA[Chrome 38.0.2125 (Windows Vista) ERROR
+	Uncaught ReferenceError: define is not defined
+	at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/module/charts/core.js:2
+,Chrome 38.0.2125 (Windows Vista) ERROR
+	Uncaught ReferenceError: define is not defined
+	at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/module/charts/base.js:6
+,Chrome 38.0.2125 (Windows Vista) ERROR
+	Uncaught ReferenceError: define is not defined
+	at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/module/charts/linechart.js:1
+
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>

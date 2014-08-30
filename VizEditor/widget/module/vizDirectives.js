@@ -2,81 +2,11 @@
 define(["angular",
     "utils",
     "vizProviders",
-    "lib/angular-bootstrap/ui-bootstrap-tpls.min",
-    "lib/lvl-drag-drop",
-    "lib/lvl-uuid"],
+    "directives/layout/layout"
+    ]
+    ,
     function(angular){
-        angular.module('vizDirectives', ['utils','vizDirectives.layout']);
-        //http://angular-ui.github.io/bootstrap/
-        angular.module('vizDirectives.layout',['vizService','ui.bootstrap','lvl.directives.dragdrop'])
-        .constant('dictShapeType',{
-            LINE_CHART: 'LineChart',
-            PIE_CHART: 'PieChart'
-        })
-       .directive('vizToolbox',function(dictShapeType){
-            return{
-                restrict: "EA",
-                scope: {},
-                controller: function($scope){
-                    $scope.charts=[];
-                    $scope.shapes=[];
-                    $scope.charts.push({
-                        chartname:'LineChart',
-                        imgsrc:'widget/icons/linechart.png',
-                        viztype: dictShapeType.LINE_CHART
-                    });
-                    $scope.charts.push({
-                        chartname:'PieChart',
-                        imgsrc:'widget/icons/piechart.png',
-                        viztype: dictShapeType.PIE_CHART
-                    });
-                    $scope.shapes.push({
-                        shapename: 'Line',
-                        imgsrc:'widget/icons/line.png'
-                    });
-
-                    $scope.shapes.push({
-                        shapename: 'Rectangular',
-                        imgsrc:'widget/icons/rectangular.png'
-                    });
-                },
-                templateUrl: "widget/module/template/vizToolbox_tpl.html"
-            };
-        })
-        .directive('vizReportContainer', function () {
-           return {
-                   restrict: "EA",
-                   scope:{
-                       book:'=',
-                       sheets:'=sheets'
-                   },
-                   controller: function($scope){
-                       $scope.name='vizReportContainer';
-                   },
-                   templateUrl: "widget/module/template/vizReportContainer_tpl.html"
-           };
-        })
-
-        .directive('vizReportLayout', function () {
-           return {
-                   restrict: "EA",
-                   scope:{
-                       sheet:'='
-                   },
-                   controller: function($scope,$compile){
-                        function insertChart(sourceType,atPos){
-                            $scope.sheet.widgets.push({id:null,name: sourceType, x: atPos.x, y: atPos.y});
-                        }
-                        $scope.onDrop = function(source,target,mouseEvent){
-                            var sourceType = source.getAttribute('viztype'),
-                                dropPosition =   {x:mouseEvent.offsetX,
-                                                   y:mouseEvent.offsetY};
-                            $scope.$apply(insertChart(sourceType,dropPosition));
-                        };
-                   },
-                   templateUrl: "widget/module/template/vizReportLayout_tpl.html"
-           };
-        })
+        angular.module('vizDirectives', ['utils','vizService','vizDirectives.layout'])        
         .directive('ngChart',function(){
             return{
                 restrict:'EA',   

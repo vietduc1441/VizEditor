@@ -1,0 +1,12 @@
+define(["angular",
+        "directives/layout/vizReportContainer",
+        "directives/layout/vizToolBox",
+        "directives/layout/vizReportLayout"
+    ],function(angular){
+    //http://angular-ui.github.io/bootstrap/
+    angular.module('vizDirectives.layout',[
+                    'vizDirectives.layout.vizReportContainer',
+                    "vizDirectives.layout.vizToolBox",
+                    "vizDirectives.layout.vizReportLayout"
+                    ]);
+});

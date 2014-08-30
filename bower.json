@@ -23,7 +23,6 @@
     "angular-bootstrap": "~0.11.0",
     "angular": "1.2.21",
     "d3": "~3.4.11",
-    "require": "*",
     "underscore": "~1.6.0"
   },
   "devDependencies": {
