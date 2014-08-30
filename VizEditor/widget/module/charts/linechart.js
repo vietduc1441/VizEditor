@@ -7,11 +7,25 @@ define(["charts/base","nvd3","d3"],
           this.data=sinAndCos();  
         },
         lineChart.render=function(parentNode){
-        d3.select(parentNode)    //Select the <svg> element you want to render the chart in.   
-            .datum(this.data)         //Populate the <svg> element with chart data...
-            .call(this);          //Finally, render the chart!
-        var self=this;
-        nv.utils.windowResize(function() { self.update();});
+            d3.select(parentNode)    //Select the <svg> element you want to render the chart in.   
+                .datum(this.data)         //Populate the <svg> element with chart data...
+                .call(this);          //Finally, render the chart!
+            var self=this;
+            nv.utils.windowResize(function() { self.update();});
+        };
+        lineChart.config=function(){
+            this.margin({left: 50})  //Adjust this margins to give the x-axis some breathing room.
+                .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!
+                .transitionDuration(350)  //how fast do you want the lines to transition?
+                .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
+                .showYAxis(true)        //Show the y-axis
+                .showXAxis(true);        //Show the x-axis
+            this.xAxis     //Chart x-axis settings
+                .axisLabel('Time (ms)')
+                .tickFormat(d3.format(',r'));
+            this.yAxis     //Chart y-axis settings
+                .axisLabel('Voltage (v)')
+                .tickFormat(d3.format('.02f'));
 
         };
         return lineChart;

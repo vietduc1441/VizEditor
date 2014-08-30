@@ -116,25 +116,12 @@ define(["angular",
                     require(["charts/"+widget.type],
                     function(VizChart){                        
                         chart= VizChart[widget.type].create();
-                        chart.margin({left: 0})  //Adjust chart margins to give the x-axis some breathing room.
-                            .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!
-                            .transitionDuration(350)  //how fast do you want the lines to transition?
-                            .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
-                            .showYAxis(true)        //Show the y-axis
-                            .showXAxis(true);        //Show the x-axis
-
-                        chart.xAxis     //Chart x-axis settings
-                              .axisLabel('Time (ms)')
-                              .tickFormat(d3.format(',r'));
-
-                        chart.yAxis     //Chart y-axis settings
-                            .axisLabel('Voltage (v)')
-                            .tickFormat(d3.format('.02f'));
+                        chart.config();
                         chart.setData();
                         chart.render(element.find("svg")[0]);
 
                         scope.$watch('widget.width+widget.height',function(){
-    //                        chart.resize(widget.width,widget.height);
+//                            chart.resize(widget.width,widget.height);
     //                        scope.chartstyle={
     //                            width: widget.width+'px',
     //                            height: widget.height+'px'
@@ -160,7 +147,7 @@ define(["angular",
                     });
                     
                 },
-                template: "<div ng-style='chartstyle'></div><svg></svg>"
+                template: "<div ><svg ng-style='chartstyle'></svg></div>"
             };
         })
         .directive('vizChartConfig',function(){//TODO: test
