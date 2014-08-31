@@ -8,7 +8,7 @@ define(["angular",
                                                             "ui.bootstrap",
                                                             "lvl.directives.dragdrop"
                                                             ])
-           .directive('vizToolBox',['dictShapeType',function(dictShapeType){
+           .directive('vizToolbox',['dictShapeType',function(dictShapeType){
             return{
                 restrict: "EA",
                 scope: {},
