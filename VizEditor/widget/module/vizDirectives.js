@@ -3,10 +3,9 @@ define(["angular",
     "directives/utils/utils",
     "vizProviders",
     "directives/layout/layout"
-    ]
-    ,
+    ],
     function(angular){
-        angular.module('vizDirectives', ['utils','vizService','vizDirectives.layout'])        
+        angular.module('vizDirectives', ['utils','vizService','vizDirectives.layout'])
         .directive('ngChart',function(){
             return{
                 restrict:'EA',   
@@ -46,16 +45,15 @@ define(["angular",
                     require(["charts/"+widget.type],
                     function(VizChart){                        
                         chart= VizChart[widget.type].create();
-                        chart.config();
+                        chart.config({xAxis:widget.x_title, yAxis: widget.y_title});
                         chart.setData();
                         chart.render(element.find("svg")[0]);
-
                         scope.$watch('widget.width+widget.height',function(){
-//                            chart.resize(widget.width,widget.height);
-    //                        scope.chartstyle={
-    //                            width: widget.width+'px',
-    //                            height: widget.height+'px'
-    //                            };
+                            chart.resize(widget.width,widget.height);
+                            scope.chartstyle={
+                                width: widget.width+'px',
+                                height: widget.height+'px'
+                                };
                             });
                         scope.$watchCollection(
                             changeMonitor.getWatchColObj,//any change in config
@@ -106,8 +104,8 @@ define(["angular",
                       }
                   };
                 },
-                //templateUrl: 'widget/module/template/vizChart_config_tpl.html'
-                template: "<ng-include src='getTemplate()'></ng-include>"
+                templateUrl: 'widget/module/template/vizChart_config_tpl.html'
+//                template: "<ng-include src='getTemplate()'></ng-include>"
             };
         });
 });

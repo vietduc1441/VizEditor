@@ -10,18 +10,21 @@ define(["angular","vizDirectives"],function(angular){
         author: "DUC"
     };
     $scope.sheets=[
-        {id:1, sheetname:"Sheet 1", content: "Sheet1 content", widgetids: [1,2], oql:{id: 1, amount: null, query: "oql query to get data" }},
+        {id:1, sheetname:"Sheet 1", content: "Sheet1 content", widgetids: [1], oql:{id: 1, amount: null, query: "oql query to get data" }},
 //        {id:2, sheetname:"Sheet 2", content: "Sheet2 content", widgetids: [3, 5, 6], oql:{id: 2, amount: null, query: "oql query to get data" }},
        // {id:3, sheetname:"Sheet 3", content: "Sheet3 content", widgetids: [2, 8, 7], oql:{id: 3, amount: null, query: "oql query to get data" }}
     ];
-    $scope.widgets=[{id:1, type: "LineChart", x: 200, y: 230, width: 500, height: 300, 
-                           label: "A multiple linechart", shapes:["21","22"], 
-                           x_title:"month", y_title:"amount",
-                           series:["product0","product1","product2"], 
-                           serie_names:["product0","product1","product2"],
-                           selected_series:["product0","product1"], 
-                           categories:["order","id"], category_names:["order","id"],
-                           selected_categories:["order"], category_need_sorted: false,
+    $scope.widgets=[{id:1, type: "LineChart", x: 300, y: 10, width: 800, height: 600, 
+                           label: "A multiple linechart", //name of the widget
+                           shapes:["21","22"], //shapes of the point (circle for now)
+                           x_title:"month", y_title:"amount",//title
+                           series:["product0","product1","product2"],//series
+                           serie_names:["product0","product1","product2"],//alias name of serie
+                           selected_series:["product0","product1"], //selected series
+                           categories:["order","id"], //cat
+                           category_names:["order","id"],//cat alias name
+                           selected_categories:["order"], //selected cat
+                           category_need_sorted: false,
                            link:"www.shareme.com/widget/1"},
                        
                     {id:2, type: "PieChart", x: 120, y: 250, width: 200, height: 200, label:["label"]},
