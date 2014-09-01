@@ -1,41 +1,78 @@
 define(["charts/base","nvd3","d3"],
     function(viz, nv, d3){
     'use strict';
-    function createNew(){
-        var lineChart= nv.models.lineChart();
-        lineChart.setData=function(data){
-          this.data=data||sinAndCos();  
-        },
-        lineChart.render=function(parentNode){
-            d3.select(parentNode)    //Select the <svg> element you want to render the chart in.   
-                .datum(this.data)         //Populate the <svg> element with chart data...
-                .call(this);          //Finally, render the chart!
-            var self=this;
-            nv.utils.windowResize(function() { self.update();});
-        };
-        lineChart.resize=function(){
-            this.update();
-        };
-        /**
-         * 
-         * @param {object} configObj - Object {xAxis,yAxis}
-         * @returns {undefined}
-         */
-        lineChart.config=function(configObj){
-            this.margin({left: 50})  //Adjust this margins to give the x-axis some breathing room.
-                .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!
-                .transitionDuration(350)  //how fast do you want the lines to transition?
-                .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
-                .showYAxis(true)        //Show the y-axis
-                .showXAxis(true);        //Show the x-axis
-            this.xAxis     //Chart x-axis settings
-                .axisLabel(configObj.xAxis)
-                .tickFormat(d3.format(',r'));
-            this.yAxis     //Chart y-axis settings
-                .axisLabel(configObj.yAxis)
-                .tickFormat(d3.format('.02f'));
+    
+    function processRawData(data, series, category, category_need_sorted){
+        var filteredData=[], xAttr, processedData;       
+        if (! category||! series.length) return data;
+        xAttr= category;
+        if ( category_need_sorted){
+            processedData=data.sort(function (a,b){return a[xAttr]-b[xAttr];});
+        }
+        else{
+            processedData=data;
+        }
+        processedData=d3.nest()
+                .key(function(d){return d[xAttr];})
+                .rollup(function(leaves) {
+                                var sumup={};
+                                for(var leaf in leaves[0]){
+                                    if (series.indexOf(leaf)>=0)
+                                        sumup[leaf]=d3.sum(leaves,function(d){return d[leaf];});
+                                }
+                                return sumup;
+                            })
+                .entries(processedData);
 
-        };
+        //create a map for each category
+        filteredData= series.map(function(yAttr){
+            return {
+                        key: yAttr,//category's name
+                        values: processedData.map(function(d){
+                            return {x: d.key,//x value
+                                    y: d.values[yAttr]};//y value
+                        }, this)
+                   };
+        }, this);
+        return filteredData;
+    };
+    
+    var lineChart= nv.models.lineChart();
+    lineChart.setData=function(data, series, category, category_need_sorted){
+      this.data= processRawData(data, series, category, category_need_sorted)||sinAndCos();  
+    },
+    lineChart.render=function(parentNode){
+        d3.select(parentNode)    //Select the <svg> element you want to render the chart in.   
+            .datum(this.data)         //Populate the <svg> element with chart data...
+            .call(this);          //Finally, render the chart!
+        var self=this;
+        nv.utils.windowResize(function() { self.update();});
+    };
+    lineChart.resize=function(){
+        this.update();
+    };
+    /**
+     * 
+     * @param {object} configObj - Object {xAxis,yAxis}
+     * @returns {undefined}
+     */
+    lineChart.config=function(configObj){
+        this.margin({left: 50})  //Adjust this margins to give the x-axis some breathing room.
+            .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!
+            .transitionDuration(350)  //how fast do you want the lines to transition?
+            .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
+            .showYAxis(true)        //Show the y-axis
+            .showXAxis(true);        //Show the x-axis
+        this.xAxis     //Chart x-axis settings
+            .axisLabel(configObj.xAxis)
+            .tickFormat(d3.format(',r'));
+        this.yAxis     //Chart y-axis settings
+            .axisLabel(configObj.yAxis)
+            .tickFormat(d3.format('.02f'));
+
+    };
+    function createNew(){
+        
         return lineChart;
     };
     viz.LineChart={

@@ -46,7 +46,7 @@ define(["angular",
                     function(VizChart){                        
                         chart= VizChart[widget.type].create();
                         chart.config({xAxis:widget.x_title, yAxis: widget.y_title});
-                        chart.setData();
+                        chart.setData(widget.data, widget.selected_series, widget.selected_categories[0], widget.category_need_sorted);
                         chart.render(element.find("svg")[0]);
                         scope.$watch('widget.width+widget.height',function(){
                             chart.resize(widget.width,widget.height);
@@ -58,9 +58,7 @@ define(["angular",
                         scope.$watchCollection(
                             changeMonitor.getWatchColObj,//any change in config
                             function(){
-                                if (!widget.data) {//no Data
-    //                                chart.visualizeExampleData();
-                                }else if(chart){
+                                if(widget.data&&chart){
     //                                chart.setCategory(widget.selected_categories[0]);
     //                                chart.sortCategory(widget.category_need_sorted);
     //                                chart.setSeries(widget.selected_series);
