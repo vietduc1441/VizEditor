@@ -172,3 +172,7 @@ visualizationTab{
      position:absolute;
      top:1px;
  }
+ .resizer{
+     position: absolute;
+     right: 0px;
+}

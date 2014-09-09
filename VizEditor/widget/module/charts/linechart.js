@@ -51,6 +51,7 @@ define(["charts/base","nvd3","d3"],
     lineChart.resize=function(){
         this.update();
     };
+  
     /**
      * 
      * @param {object} configObj - Object {xAxis,yAxis}

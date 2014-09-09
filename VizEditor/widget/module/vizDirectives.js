@@ -49,7 +49,7 @@ define(["angular",
                         chart.setData(widget.data, widget.selected_series, widget.selected_categories[0], widget.category_need_sorted);
                         chart.render(element.find("svg")[0]);
                         scope.$watch('widget.width+widget.height',function(){
-                            chart.resize(widget.width,widget.height);
+                            chart.resize();
                             scope.chartstyle={
                                 width: widget.width+'px',
                                 height: widget.height+'px'
@@ -59,11 +59,11 @@ define(["angular",
                             changeMonitor.getWatchColObj,//any change in config
                             function(){
                                 if(widget.data&&chart){
-    //                                chart.setCategory(widget.selected_categories[0]);
-    //                                chart.sortCategory(widget.category_need_sorted);
-    //                                chart.setSeries(widget.selected_series);
-    //                                chart.setData(widget.data);
-    //                                chart.refresh();
+                                    chart.setData(widget.data, 
+                                                    widget.selected_series, 
+                                                    widget.selected_categories[0], 
+                                                    widget.category_need_sorted);
+                                    chart.render(element.find("svg")[0]);
                                 }
                                 else{
 
