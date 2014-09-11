@@ -35,7 +35,7 @@ define(["angular",
                         imgsrc:'widget/icons/rectangular.png'
                     });
                 },
-                templateUrl: "widget/module/template/vizToolbox_tpl.html"
+                templateUrl: "widget/module/template/layout/vizToolbox_tpl.html"
             };
         }]);
 });

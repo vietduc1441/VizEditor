@@ -1,10 +1,12 @@
 define(["angular",
         "lib/angular-bootstrap/ui-bootstrap-tpls.min",
+        "directives/layout/vizReportLayout",
         "directives/layout/vizToolBox"
         ],
     function(angular){
     angular.module("vizDirectives.layout.vizReportContainer",[
                                                               "ui.bootstrap",
+                                                              "vizDirectives.layout.vizReportLayout",
                                                               "vizDirectives.layout.vizToolBox"
                                                             ])
             .directive('vizReportContainer', function () {
@@ -17,7 +19,7 @@ define(["angular",
                                controller: function($scope){
                                    $scope.name='vizReportContainer';
                                },
-                               templateUrl: "widget/module/template/vizReportContainer_tpl.html"
+                               templateUrl: "widget/module/template/layout/vizReportContainer_tpl.html"
                        };
                     });
 });

@@ -14,7 +14,7 @@ define(["angular","vizDirectives"],function(angular){
 //        {id:2, sheetname:"Sheet 2", content: "Sheet2 content", widgetids: [3, 5, 6], oql:{id: 2, amount: null, query: "oql query to get data" }},
        // {id:3, sheetname:"Sheet 3", content: "Sheet3 content", widgetids: [2, 8, 7], oql:{id: 3, amount: null, query: "oql query to get data" }}
     ];
-    $scope.widgets=[{id:1, type: "LineChart", x: 300, y: 10, width: 800, height: 600, 
+    $scope.widgets=[{id:1, type: "LineChart", x: 300, y: 10, width: 700, height: 500, 
                            label: "A multiple linechart", //name of the widget
                            shapes:["21","22"], //shapes of the point (circle for now)
                            x_title:"month", y_title:"amount",//title

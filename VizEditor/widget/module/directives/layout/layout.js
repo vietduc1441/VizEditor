@@ -7,6 +7,7 @@ define(["angular",
     angular.module('vizDirectives.layout',[
                     'vizDirectives.layout.vizReportContainer',
                     "vizDirectives.layout.vizToolBox",
-                    "vizDirectives.layout.vizReportLayout"
+                    "vizDirectives.layout.vizReportLayout",
+                    "vizDirectives.layout.vizSheetConfig"
                     ]);
 });

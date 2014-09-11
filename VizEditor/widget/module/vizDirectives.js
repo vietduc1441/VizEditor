@@ -84,7 +84,7 @@ define(["angular",
                 },
                 controller: function($scope){
                   $scope.getTemplate=function(){
-                        return 'widget/module/template/viz'+$scope.widget.type+'_config_tpl.html';
+                        return 'widget/module/template/charts/viz'+$scope.widget.type+'_config_tpl.html';
                   }; 
                   $scope.isInList=function(item,list){
                       return list.indexOf(item)>=0;

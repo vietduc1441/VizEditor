@@ -1,5 +1,5 @@
-define(["angular"],function(angular){
-    angular.module("vizDirectives.layout.vizReportLayout",[])
+define(["angular","directives/layout/vizSheetConfig"],function(angular){
+    angular.module("vizDirectives.layout.vizReportLayout",["vizDirectives.layout.vizSheetConfig"])
             .directive('vizReportLayout', function () {
                return {
                        restrict: "EA",
@@ -17,7 +17,7 @@ define(["angular"],function(angular){
                                 $scope.$apply(insertChart(sourceType,dropPosition));
                             };
                        },
-                       templateUrl: "widget/module/template/vizReportLayout_tpl.html"
+                       templateUrl: "widget/module/template/layout/vizReportLayout_tpl.html"
                };
             });            
 });
