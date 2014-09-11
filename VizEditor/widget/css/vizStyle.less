@@ -8,6 +8,8 @@
 @tooboxwidth: 20%;
 @layoutwidth: 100%;
 @layoutheight: 800px;
+@sheetconfigwidth: 20%;
+@sheetconfighight: 100%;
 .viz-report-container{
   background-color: @reportbackgroundcolor;
   text-align: @reportbackgroundtextalign;
@@ -41,4 +43,15 @@
     right: 5px;
     width: @layoutwidth;
     height: @layoutheight;
+}
+.viz-sheet-config{
+    .shadow;
+    border-radius: @borderradius;
+    background-color: @toolboxbackgroundcolor;
+    text-align: @toolboxtextalign;
+    position: relative;
+    top: 65px;
+    right: 5px;
+    width: @sheetconfigwidth;
+    height : @sheetconfighight;
 }
