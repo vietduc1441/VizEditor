@@ -38,9 +38,12 @@
   border-radius: 5px;
   background-color: #5cb85c;
   text-align: center;
-  position: relative;
-  top: 65px;
-  right: 5px;
-  width: 20%;
-  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 30%;
+}
+.viz-preview-data-table {
+  width: 600px;
+  height: 400px;
 }

@@ -1,4 +1,30 @@
-<form role="form" class="viz-sheet-config">
-    
-    afafsaf
-</form>
+<div  class="viz-sheet-config" ng-style="width" ng-click="toggleWidth()">
+    <accordion close-others="false">
+        <accordion-group ng-init="isSheetConfigOpen=false" is-open="isSheetConfigOpen">
+            <!-- Heading -->
+            <accordion-heading stop-event='click'>
+                General Config <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isSheetConfigOpen, 'glyphicon-chevron-right': !isSheetConfigOpen}" ></i>
+            </accordion-heading>
+            
+            <!-- -------------------------------------------------------------- -->    
+            <!-- Chart section -->
+            <accordion-group ng-init="ischartboxopen=true" is-open="ischartboxopen" stop-event='click'>
+                <accordion-heading>
+                    OQL
+                </accordion-heading>
+                <!-- OQL Box-->    
+                <textarea class="form-control" rows="3" ng-model="sheet.oql.query" ></textarea>
+            
+            </accordion-group>
+            <!-- -------------------------------------------------------------- -->    
+            <!-- Data section -->
+            <accordion-group ng-init="isshapeboxopen=false" is-open="isshapeboxopen" stop-event='click'>
+                <accordion-heading>
+                    Sample data <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isshapeboxopen, 'glyphicon-chevron-right': !isshapeboxopen}"></i>
+                </accordion-heading>
+                <!-- Data table-->    
+                <div  ng-grid='{data:"sheet.data"}' class="viz-preview-data-table"></div>
+            </accordion-group>
+        </accordion-group>
+    </accordion>
+</div>

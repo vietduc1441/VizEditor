@@ -1,11 +1,13 @@
 define(["angular",
         "constants/dictShapeType",
+        "directives/utils/utils",
         "lib/angular-bootstrap/ui-bootstrap-tpls.min",
         "lib/lvl-drag-drop",
         "lib/lvl-uuid"],function(angular){
             angular.module("vizDirectives.layout.vizToolBox",[
                                                             "vizDirectives.constant.dictShapeType",
                                                             "ui.bootstrap",
+                                                            "utils",
                                                             "lvl.directives.dragdrop"
                                                             ])
            .directive('vizToolbox',['dictShapeType',function(dictShapeType){
@@ -34,6 +36,17 @@ define(["angular",
                         shapename: 'Rectangular',
                         imgsrc:'widget/icons/rectangular.png'
                     });
+                    $scope.minWidth={"width":"10%"};
+                    $scope.maxWidth={"width":"30%"};
+                    $scope.width=$scope.minWidth;
+                    $scope.toggleWidth=function(){
+                        if ($scope.width===$scope.maxWidth){
+                            $scope.width=$scope.minWidth;
+                        }
+                        else{
+                            $scope.width=$scope.maxWidth;
+                        }
+                    };
                 },
                 templateUrl: "widget/module/template/layout/vizToolbox_tpl.html"
             };

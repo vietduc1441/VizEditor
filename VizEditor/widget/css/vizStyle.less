@@ -8,8 +8,9 @@
 @tooboxwidth: 20%;
 @layoutwidth: 100%;
 @layoutheight: 800px;
-@sheetconfigwidth: 20%;
-@sheetconfighight: 100%;
+@sheetconfigwidth: 30%;
+@previewTableWidth: 600px;
+@previewTableHeight: 400px;
 .viz-report-container{
   background-color: @reportbackgroundcolor;
   text-align: @reportbackgroundtextalign;
@@ -49,9 +50,12 @@
     border-radius: @borderradius;
     background-color: @toolboxbackgroundcolor;
     text-align: @toolboxtextalign;
-    position: relative;
-    top: 65px;
-    right: 5px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
     width: @sheetconfigwidth;
-    height : @sheetconfighight;
+}
+.viz-preview-data-table{
+    width:@previewTableWidth;
+    height:@previewTableHeight;
 }

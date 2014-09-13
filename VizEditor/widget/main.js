@@ -8,6 +8,8 @@ require.config({
                 "mxLib":'../lib/mxgraph/mxClient',
                 "lib":'../lib',
                 "nvd3":'../lib/nvd3/nv.d3',
+                "jquery":['http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min',
+                            '../lib/jquery/dist/jquery.min']
         //        "angular-nvd3":'../lib/angularjs-nvd3-directives'
 	},
 	shim: {
@@ -25,7 +27,8 @@ require.config({
                         }}
     },
 	priority: [
-		"angular"
+		"angular",
+                "jQuery"
 	]
 });
 window.name = "NG_DEFER_BOOTSTRAP!";

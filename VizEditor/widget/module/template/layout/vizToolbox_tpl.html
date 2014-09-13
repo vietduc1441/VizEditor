@@ -1,13 +1,12 @@
-<div  class="viz-toolbox" draggable >
-    <!-- Todo: make the toolbox movable by add draggable attribute-->
+<div  class="viz-toolbox" draggable ng-style="width"  ng-click="toggleWidth()">
     <accordion close-others="false">
-        <accordion-group ng-init="istoolboxopen=true" is-open="istoolboxopen">
+        <accordion-group ng-init="istoolboxopen=false" is-open="istoolboxopen" >
             <!-- Heading -->
-            <accordion-heading>
+            <accordion-heading >
                 Toolbox <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': istoolboxopen, 'glyphicon-chevron-right': !istoolboxopen}"></i>
             </accordion-heading>
             <!-- Chart section -->
-            <accordion-group ng-init="ischartboxopen=true" is-open="ischartboxopen">
+            <accordion-group ng-init="ischartboxopen=true" is-open="ischartboxopen" stop-event='click'>
                 <accordion-heading>
                     Charts <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': ischartboxopen, 'glyphicon-chevron-right': !ischartboxopen}"></i>
                 </accordion-heading>
@@ -15,7 +14,7 @@
                 <div ng-repeat="chart in charts" x-lvl-draggable viztype={{chart.viztype}}><img ng-src={{chart.imgsrc}} alt={{chart.chartname}}></div>
             <!-- Shape section -->    
             </accordion-group>
-            <accordion-group ng-init="isshapeboxopen=false" is-open="isshapeboxopen">
+            <accordion-group ng-init="isshapeboxopen=false" is-open="isshapeboxopen" stop-event='click'>
                 <accordion-heading>
                     Shapes <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isshapeboxopen, 'glyphicon-chevron-right': !isshapeboxopen}"></i>
                 </accordion-heading>
