@@ -8,7 +8,7 @@ define(["angular","directives/layout/vizSheetConfig"],function(angular){
                        },
                        controller: function($scope,$compile){
                             function insertChart(sourceType,atPos){
-                                $scope.sheet.widgets.push({id:null,name: sourceType, x: atPos.x, y: atPos.y});
+                                $scope.sheet.widgets.push({id:null, type: sourceType, x: atPos.x, y: atPos.y});
                             }
                             $scope.onDrop = function(source,target,mouseEvent){
                                 var sourceType = source.getAttribute('viztype'),

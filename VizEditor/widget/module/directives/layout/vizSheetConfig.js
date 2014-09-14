@@ -1,6 +1,6 @@
 define(["angular",        
         "lib/angular-bootstrap/ui-bootstrap-tpls.min",
-        "lib/ng-grid/ng-grid-2.0.13.min",
+        "lib/ng-grid/ng-grid-2.0.12.min",
         "directives/utils/utils"
         ],function(angular){
     angular.module("vizDirectives.layout.vizSheetConfig",["ui.bootstrap","utils","ngGrid"])
@@ -21,6 +21,11 @@ define(["angular",
                             else{
                                 $scope.width=$scope.maxWidth;
                             }
+                        };
+                        $scope.gridOptions={
+                            data: "sheet.data",
+                            enableFiltering: true,
+                            showFilter: true,
                         };
                     },
                     link: function(scope, elm, attrs, ctr){

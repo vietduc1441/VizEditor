@@ -1,16 +1,55 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<div class="container-fluid" ng-style="{width: widget.width+'px'}">
+    <!-- widget type -->
+    <div class="row" >
+        <div class="col-md-12 text-center">{{widget.type}}</div>
+    </div>
+    <!-- Series-->    
+    <div class="row" style="position: relative;">
+        <label class="col-md-2 control-label text-right">Series</label>
+        <div class="btn-group" dropdown is-open="series.isopen">
+            <!-- dropdown toggle-->
+            <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
+                Series <span class="caret"></span>
+            </button>
+            <!-- dropdown content -->
+            <ul class="dropdown-menu col-md-9 col-md-offset-1" style="top:100%;right:0px;" role="menu">
+                <li ng-repeat="serie in widget.series">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <input type="checkbox" ng-checked="isInList(serie, widget.selected_series)" ng-click="addOrRemoveToList(serie, widget.selected_series)">
+                            <!-- TODO: alias (display name) -->
+                        </span>
+                        {{serie}} 
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- category-->    
+    <div class="row" style="position: relative;">
+        <label  class="col-md-2 control-label text-right">Category</label>
+        <div class="btn-group" dropdown is-open="categories.isopen">
+            <!-- dropdown toggle-->
+            <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
+                Category <span class="caret"></span>
+            </button>
+            <!-- dropdown content -->
+            <ul class="dropdown-menu col-md-9 col-md-offset-1" style="top:100%;right:0px;" role="menu">
+                <li ng-repeat="cat in widget.categories">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <input type="checkbox" ng-checked="isInList(cat, widget.selected_categories)" ng-click="addOrRemoveToList(cat, widget.selected_categories, 1, 1)">
+                            <!-- TODO: alias (display name) -->
+                        </span>
+                        {{cat}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--Shared link-->
+    <div class="row"> 
+        <label class="col-md-2 control-label right">Shared link</label>
+        <p class="col-md-9 col-md-offset-1 text-info text-left">{{widget.link}}</p>
+    </div>
+</div>

@@ -2,7 +2,7 @@
 * ng-grid JavaScript Library
 * Authors: https://github.com/angular-ui/ng-grid/blob/master/README.md 
 * License: MIT (http://www.opensource.org/licenses/mit-license.php)
-* Compiled At: 09/02/2014 10:22
+* Compiled At: 08/04/2014 16:09
 ***********************************************/
 (function(window, $) {
 'use strict';
@@ -23,11 +23,6 @@ var DISPLAY_CELL_TEMPLATE = /DISPLAY_CELL_TEMPLATE/g;
 var EDITABLE_CELL_TEMPLATE = /EDITABLE_CELL_TEMPLATE/g;
 var CELL_EDITABLE_CONDITION = /CELL_EDITABLE_CONDITION/g;
 var TEMPLATE_REGEXP = /<.+>/;
-var FUNC_REGEXP = /(\([^)]*\))?$/;
-var DOT_REGEXP = /\./g;
-var APOS_REGEXP = /'/g;
-var BRACKET_REGEXP = /^(.*)((?:\s*\[\s*\d+\s*\]\s*)|(?:\s*\[\s*"(?:[^"\\]|\\.)*"\s*\]\s*)|(?:\s*\[\s*'(?:[^'\\]|\\.)*'\s*\]\s*))(.*)$/;
-
 window.ngGrid = {};
 window.ngGrid.i18n = {};
 var ngGridServices = angular.module('ngGrid.services', []);
@@ -319,12 +314,8 @@ angular.module('ngGrid.services').factory('$domUtilityService',['$utilityService
         for (var i = 0; i < cols.length; i++) {
             var col = cols[i];
             if (col.visible !== false) {
-                var rightPad = 0;
-                if ((i === cols.length - 1) && (sumWidth + col.width < grid.elementDims.rootMaxW)) {
-                    rightPad = grid.elementDims.rootMaxW - sumWidth - col.width;
-                }
-                css += "." + gridId + " .col" + i + " { width: " + (col.width + rightPad) + "px; left: " + sumWidth + "px; height: " + rowHeight + "px }" +
-                    "." + gridId + " .colt" + i + " { width: " + (col.width + rightPad) + "px; }";
+                css += "." + gridId + " .col" + i + " { width: " + col.width + "px; left: " + sumWidth + "px; height: " + rowHeight + "px }" +
+                    "." + gridId + " .colt" + i + " { width: " + col.width + "px; }";
                 sumWidth += col.width;
             }
         }
@@ -366,8 +357,7 @@ angular.module('ngGrid.services').factory('$domUtilityService',['$utilityService
     getWidths();
     return domUtilityService;
 }]);
-
-angular.module('ngGrid.services').factory('$sortService', ['$parse', '$utilityService', function($parse, $utils) {
+angular.module('ngGrid.services').factory('$sortService', ['$parse', function($parse) {
     var sortService = {};
     sortService.colSortFnCache = {}; 
     sortService.isCustomSort = false;
@@ -460,9 +450,8 @@ angular.module('ngGrid.services').factory('$sortService', ['$parse', '$utilitySe
                 col = sortInfo.columns[indx];
                 direction = sortInfo.directions[indx];
                 sortFn = sortService.getSortFn(col, d);
-
-                var propA = $utils.evalProperty(itemA, order[indx]);
-                var propB = $utils.evalProperty(itemB, order[indx]);
+                var propA = $parse(order[indx])(itemA);
+                var propB = $parse(order[indx])(itemB);
                 if (sortService.isCustomSort) {
                     res = sortFn(propA, propB);
                     tem = direction === ASC ? res : 0 - res;
@@ -511,7 +500,7 @@ angular.module('ngGrid.services').factory('$sortService', ['$parse', '$utilitySe
             if (!item) {
                 return sortFn;
             }
-            sortFn = sortService.guessSortFn($parse('entity[\''+col.field.replace(DOT_REGEXP, '\'][\'')+'\']')({entity:item}));
+            sortFn = sortService.guessSortFn($parse(col.field)(item));
             if (sortFn) {
                 sortService.colSortFnCache[col.field] = sortFn;
             } else {
@@ -549,6 +538,9 @@ angular.module('ngGrid.services').factory('$utilityService', ['$parse', function
                     action(obj[prop], prop);
                 }
             }
+        },
+        evalProperty: function (entity, path) {
+            return $parse("entity." + path)({ entity: entity });
         },
         endsWith: function(str, suffix) {
             if (!str || !suffix || typeof str !== "string") {
@@ -600,31 +592,8 @@ angular.module('ngGrid.services').factory('$utilityService', ['$parse', function
             else {
                 return "";
             }
-        },
-        init: function () {
-            function preEval(path) {
-                var m = BRACKET_REGEXP.exec(path);
-                if (m) {
-                    return (m[1] ? preEval(m[1]) : m[1]) + m[2] + (m[3] ? preEval(m[3]) : m[3]);
-                } else {
-                    path = path.replace(APOS_REGEXP, '\\\'');
-                    var parts = path.split(DOT_REGEXP);
-                    var preparsed = [parts.shift()];
-                    angular.forEach(parts, function (part) {
-                        preparsed.push(part.replace(FUNC_REGEXP, '\']$1'));
-                    });
-                    return preparsed.join('[\'');
-                }
-            }
-
-            this.preEval = preEval;
-            this.evalProperty = function (entity, path) {
-                return $parse(preEval('entity.' + path))({ entity: entity });
-            };
-            delete this.init;
-            return this;
         }
-    }.init();
+    };
 
     return utils;
 }]);
@@ -1630,7 +1599,7 @@ var ngGrid = function ($scope, options, sortService, domUtilityService, $filter,
     };
     self.init = function() {
         return self.initTemplates().then(function(){
-            $scope.selectionProvider = new ngSelectionProvider(self, $scope, $parse, $utils);
+            $scope.selectionProvider = new ngSelectionProvider(self, $scope, $parse);
             $scope.domAccessProvider = new ngDomAccessProvider(self);
             self.rowFactory = new ngRowFactory(self, $scope, domUtilityService, $templateCache, $utils);
             self.searchProvider = new ngSearchProvider($scope, self, $filter, $utils);
@@ -2391,7 +2360,7 @@ var ngSearchProvider = function ($scope, grid, $filter, $utils) {
         else {
             var primitiveValues = getAllPrimitiveValues(evalObject(value, col.field));
 			for(var prop in primitiveValues) {
-				result |= condition.regex.test(primitiveValues[prop]);
+				result |= condition.regex.test(primValues[prop]);
 			}
         }
         if (result) {
@@ -2528,18 +2497,14 @@ var ngSearchProvider = function ($scope, grid, $filter, $utils) {
     }));
 };
 
-var ngSelectionProvider = function (grid, $scope, $parse, $utils) {
+var ngSelectionProvider = function (grid, $scope, $parse) {
     var self = this;
     self.multi = grid.config.multiSelect;
     self.selectedItems = grid.config.selectedItems;
     self.selectedIndex = grid.config.selectedIndex;
     self.lastClickedRow = undefined;
     self.ignoreSelectedItemChanges = false; 
-    var pKeyExpression = grid.config.primaryKey;
-    if (pKeyExpression) {
-      pKeyExpression = $utils.preEval('entity.' + grid.config.primaryKey);
-    }
-    self.pKeyParser = $parse(pKeyExpression);
+    self.pKeyParser = $parse(grid.config.primaryKey);
     self.ChangeSelection = function (rowItem, evt) {
         var charCode = evt.which || evt.keyCode;
         var isUpDownKeyPress = (charCode === 40 || charCode === 38);
@@ -2626,9 +2591,9 @@ var ngSelectionProvider = function (grid, $scope, $parse, $utils) {
     self.getSelectionIndex = function (entity) {
         var index = -1;
         if (grid.config.primaryKey) {
-            var val = self.pKeyParser({entity: entity});
+            var val = self.pKeyParser(entity);
             angular.forEach(self.selectedItems, function (c, k) {
-                if (val === self.pKeyParser({entity: c})) {
+                if (val === self.pKeyParser(c)) {
                     index = k;
                 }
             });
@@ -2835,20 +2800,20 @@ ngGridDirectives.directive('ngCellText',
           });
       };
   });
-ngGridDirectives.directive('ngCell', ['$compile', '$domUtilityService', '$utilityService', function ($compile, domUtilityService, utilityService) {
+ngGridDirectives.directive('ngCell', ['$compile', '$domUtilityService', function ($compile, domUtilityService) {
     var ngCell = {
         scope: false,
         compile: function() {
             return {
                 pre: function($scope, iElement) {
                     var html;
-                    var cellTemplate = $scope.col.cellTemplate.replace(COL_FIELD, utilityService.preEval('row.entity.' + $scope.col.field) );
+                    var cellTemplate = $scope.col.cellTemplate.replace(COL_FIELD, 'row.entity.' + $scope.col.field);
 
                     if ($scope.col.enableCellEdit) {
                         html =  $scope.col.cellEditTemplate;
                         html = html.replace(CELL_EDITABLE_CONDITION, $scope.col.cellEditableCondition);
                         html = html.replace(DISPLAY_CELL_TEMPLATE, cellTemplate);
-                        html = html.replace(EDITABLE_CELL_TEMPLATE, $scope.col.editableCellTemplate.replace(COL_FIELD, utilityService.preEval('row.entity.' + $scope.col.field)));
+                        html = html.replace(EDITABLE_CELL_TEMPLATE, $scope.col.editableCellTemplate.replace(COL_FIELD, 'row.entity.' + $scope.col.field));
                     } else {
                         html = cellTemplate;
                     }

@@ -45,8 +45,11 @@ define(["angular",
                     require(["charts/"+widget.type],
                     function(VizChart){                        
                         chart= VizChart[widget.type].create();
-                        chart.config({xAxis:widget.x_title, yAxis: widget.y_title});
-                        chart.setData(widget.data, widget.selected_series, widget.selected_categories[0], widget.category_need_sorted);
+                        chart.config({xAxis:widget.x_title, 
+                                    yAxis: widget.y_title,
+                                    label: widget.label,
+                                    value: widget.value});
+                        chart.setData(widget.data, widget.selected_series, widget.selected_categories&&widget.selected_categories[0], widget.category_need_sorted);
                         chart.render(element.find("svg")[0]);
                         scope.$watch('widget.width+widget.height',function(){
                             chart.resize();

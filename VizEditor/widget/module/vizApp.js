@@ -27,7 +27,7 @@ define(["angular","vizDirectives"],function(angular){
                            category_need_sorted: false,
                            link:"www.shareme.com/widget/1"},
                        
-                    {id:2, type: "PieChart", x: 120, y: 250, width: 200, height: 200, label:["label"]},
+                    {id:2, type: "PieChart", x: 120, y: 250, width: 200, height: 200, label:"order", value: "product0"},
                     {id:3, type: "BarChart", x: 10, y: 30, width: 200, height: 200},
                     {id:4, type: "MapInfo", x: 123, y: 20, width: 200, height: 200},
                     {id:5, type: "MultipleLineChart", x: 104, y: 220, width: 100, height: 200},
