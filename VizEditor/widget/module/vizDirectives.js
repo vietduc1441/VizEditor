@@ -62,10 +62,7 @@ define(["angular",
                             changeMonitor.getWatchColObj,//any change in config
                             function(){
                                 if(widget.data&&chart){
-                                    chart.setData(widget.data, 
-                                                    widget.selected_series, 
-                                                    widget.selected_categories[0], 
-                                                    widget.category_need_sorted);
+                                    chart.setData(widget.data, widget.selected_series, widget.selected_categories&&widget.selected_categories[0], widget.category_need_sorted);
                                     chart.render(element.find("svg")[0]);
                                 }
                                 else{

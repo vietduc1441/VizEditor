@@ -1,19 +1,210 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Chrome 38.0.2125 (Windows Vista)" package="" timestamp="2014-08-30T19:35:01" id="0" hostname="vietduc1441" tests="0" errors="1" failures="0" time="0">
+  <testsuite name="Chrome 38.0.2125 (Windows Vista)" package="" timestamp="2014-09-20T15:34:56" id="0" hostname="vietduc1441" tests="24" errors="0" failures="20" time="0.263">
     <properties>
       <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.24 Safari/537.36"/>
     </properties>
-    <system-out><![CDATA[Chrome 38.0.2125 (Windows Vista) ERROR
-	Uncaught ReferenceError: define is not defined
-	at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/module/charts/core.js:2
-,Chrome 38.0.2125 (Windows Vista) ERROR
-	Uncaught ReferenceError: define is not defined
-	at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/module/charts/base.js:6
-,Chrome 38.0.2125 (Windows Vista) ERROR
-	Uncaught ReferenceError: define is not defined
-	at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/module/charts/linechart.js:1
-
+    <testcase name="True should be True" time="0.005" classname="Chrome 38.0.2125 (Windows Vista).Test Karma setup:"/>
+    <testcase name="Scope should have widgets as an array" time="0.036" classname="Chrome 38.0.2125 (Windows Vista).Test VizApp">
+      <failure type="">Error: [$injector:modulerr] Failed to instantiate module vizApp due to:
+Error: [$injector:nomod] Module &apos;vizApp&apos; is not available! You either misspelled the module name or forgot to load it. If registering a module ensure that you specify the dependencies as the second argument.
+http://errors.angularjs.org/1.2.21/$injector/nomod?p0=vizApp
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:78:12
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:1668:17
+    at ensure (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:1592:38)
+    at module (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:1666:14)
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3852:22
+    at forEach (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:325:18)
+    at loadModules (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3846:5)
+    at Object.createInjector [as injector] (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3786:11)
+    at workFn (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/angular-mocks.js:1791:45)
+http://errors.angularjs.org/1.2.21/$injector/modulerr?p0=vizApp&amp;p1=Error%3A%20%5B%24injector%3Anomod%5D%20Module%20&apos;vizApp&apos;%20is%20not%20available!%20You%20either%20misspelled%20the%20module%20name%20or%20forgot%20to%20load%20it.%20If%20registering%20a%20module%20ensure%20that%20you%20specify%20the%20dependencies%20as%20the%20second%20argument.%0Ahttp%3A%2F%2Ferrors.angularjs.org%2F1.2.21%2F%24injector%2Fnomod%3Fp0%3DvizApp%0A%20%20%20%20at%20http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A78%3A12%0A%20%20%20%20at%20http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A1668%3A17%0A%20%20%20%20at%20ensure%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A1592%3A38)%0A%20%20%20%20at%20module%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A1666%3A14)%0A%20%20%20%20at%20http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A3852%3A22%0A%20%20%20%20at%20forEach%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A325%3A18)%0A%20%20%20%20at%20loadModules%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A3846%3A5)%0A%20%20%20%20at%20Object.createInjector%20%5Bas%20injector%5D%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A3786%3A11)%0A%20%20%20%20at%20workFn%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FUnit%2520Test%2Fangular-mocks.js%3F1409399032000%3A1791%3A45)%0A%20%20%20%20at%20jasmine.Block.execute%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2Fnode_modules%2Fkarma-jasmine%2Flib%2Fjasmine.js%3F1407679747000%3A1145%3A17)
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:78:12
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3880:15
+    at forEach (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:325:18)
+    at loadModules (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3846:5)
+    at Object.createInjector [as injector] (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3786:11)
+    at workFn (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/angular-mocks.js:1791:45)
+</failure>
+      <failure type="">TypeError: Cannot read property &apos;widgets&apos; of undefined
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizApp.test.js:9:21)
+</failure>
+    </testcase>
+    <testcase name="A sheet could get a list of widget by &apos;widgets&apos; attribute" time="0.014" classname="Chrome 38.0.2125 (Windows Vista).Test VizApp">
+      <failure type="">Error: [$injector:modulerr] Failed to instantiate module vizApp due to:
+Error: [$injector:nomod] Module &apos;vizApp&apos; is not available! You either misspelled the module name or forgot to load it. If registering a module ensure that you specify the dependencies as the second argument.
+http://errors.angularjs.org/1.2.21/$injector/nomod?p0=vizApp
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:78:12
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:1668:17
+    at ensure (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:1592:38)
+    at module (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:1666:14)
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3852:22
+    at forEach (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:325:18)
+    at loadModules (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3846:5)
+    at Object.createInjector [as injector] (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3786:11)
+    at workFn (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/angular-mocks.js:1791:45)
+http://errors.angularjs.org/1.2.21/$injector/modulerr?p0=vizApp&amp;p1=Error%3A%20%5B%24injector%3Anomod%5D%20Module%20&apos;vizApp&apos;%20is%20not%20available!%20You%20either%20misspelled%20the%20module%20name%20or%20forgot%20to%20load%20it.%20If%20registering%20a%20module%20ensure%20that%20you%20specify%20the%20dependencies%20as%20the%20second%20argument.%0Ahttp%3A%2F%2Ferrors.angularjs.org%2F1.2.21%2F%24injector%2Fnomod%3Fp0%3DvizApp%0A%20%20%20%20at%20http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A78%3A12%0A%20%20%20%20at%20http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A1668%3A17%0A%20%20%20%20at%20ensure%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A1592%3A38)%0A%20%20%20%20at%20module%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A1666%3A14)%0A%20%20%20%20at%20http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A3852%3A22%0A%20%20%20%20at%20forEach%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A325%3A18)%0A%20%20%20%20at%20loadModules%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A3846%3A5)%0A%20%20%20%20at%20Object.createInjector%20%5Bas%20injector%5D%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A3786%3A11)%0A%20%20%20%20at%20workFn%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FUnit%2520Test%2Fangular-mocks.js%3F1409399032000%3A1791%3A45)%0A%20%20%20%20at%20jasmine.Block.execute%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2Fnode_modules%2Fkarma-jasmine%2Flib%2Fjasmine.js%3F1407679747000%3A1145%3A17)
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:78:12
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3880:15
+    at forEach (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:325:18)
+    at loadModules (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3846:5)
+    at Object.createInjector [as injector] (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3786:11)
+    at workFn (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/angular-mocks.js:1791:45)
+</failure>
+      <failure type="">TypeError: Cannot read property &apos;sheets&apos; of undefined
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizApp.test.js:12:20)
+</failure>
+    </testcase>
+    <testcase name="True should be True" time="0.001" classname="Chrome 38.0.2125 (Windows Vista).Test Karma setup:"/>
+    <testcase name="Scope should have widgets as an array" time="0.013" classname="Chrome 38.0.2125 (Windows Vista).Test VizApp">
+      <failure type="">Error: [$injector:modulerr] Failed to instantiate module vizApp due to:
+Error: [$injector:nomod] Module &apos;vizApp&apos; is not available! You either misspelled the module name or forgot to load it. If registering a module ensure that you specify the dependencies as the second argument.
+http://errors.angularjs.org/1.2.21/$injector/nomod?p0=vizApp
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:78:12
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:1668:17
+    at ensure (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:1592:38)
+    at module (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:1666:14)
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3852:22
+    at forEach (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:325:18)
+    at loadModules (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3846:5)
+    at Object.createInjector [as injector] (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3786:11)
+    at workFn (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/angular-mocks.js:1791:45)
+http://errors.angularjs.org/1.2.21/$injector/modulerr?p0=vizApp&amp;p1=Error%3A%20%5B%24injector%3Anomod%5D%20Module%20&apos;vizApp&apos;%20is%20not%20available!%20You%20either%20misspelled%20the%20module%20name%20or%20forgot%20to%20load%20it.%20If%20registering%20a%20module%20ensure%20that%20you%20specify%20the%20dependencies%20as%20the%20second%20argument.%0Ahttp%3A%2F%2Ferrors.angularjs.org%2F1.2.21%2F%24injector%2Fnomod%3Fp0%3DvizApp%0A%20%20%20%20at%20http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A78%3A12%0A%20%20%20%20at%20http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A1668%3A17%0A%20%20%20%20at%20ensure%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A1592%3A38)%0A%20%20%20%20at%20module%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A1666%3A14)%0A%20%20%20%20at%20http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A3852%3A22%0A%20%20%20%20at%20forEach%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A325%3A18)%0A%20%20%20%20at%20loadModules%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A3846%3A5)%0A%20%20%20%20at%20Object.createInjector%20%5Bas%20injector%5D%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A3786%3A11)%0A%20%20%20%20at%20workFn%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FUnit%2520Test%2Fangular-mocks.js%3F1409399032000%3A1791%3A45)%0A%20%20%20%20at%20jasmine.Block.execute%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2Fnode_modules%2Fkarma-jasmine%2Flib%2Fjasmine.js%3F1407679747000%3A1145%3A17)
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:78:12
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3880:15
+    at forEach (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:325:18)
+    at loadModules (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3846:5)
+    at Object.createInjector [as injector] (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3786:11)
+    at workFn (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/angular-mocks.js:1791:45)
+</failure>
+      <failure type="">TypeError: Cannot read property &apos;widgets&apos; of undefined
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizApp.test.js:9:21)
+</failure>
+    </testcase>
+    <testcase name="A sheet could get a list of widget by &apos;widgets&apos; attribute" time="0.007" classname="Chrome 38.0.2125 (Windows Vista).Test VizApp">
+      <failure type="">Error: [$injector:modulerr] Failed to instantiate module vizApp due to:
+Error: [$injector:nomod] Module &apos;vizApp&apos; is not available! You either misspelled the module name or forgot to load it. If registering a module ensure that you specify the dependencies as the second argument.
+http://errors.angularjs.org/1.2.21/$injector/nomod?p0=vizApp
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:78:12
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:1668:17
+    at ensure (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:1592:38)
+    at module (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:1666:14)
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3852:22
+    at forEach (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:325:18)
+    at loadModules (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3846:5)
+    at Object.createInjector [as injector] (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3786:11)
+    at workFn (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/angular-mocks.js:1791:45)
+http://errors.angularjs.org/1.2.21/$injector/modulerr?p0=vizApp&amp;p1=Error%3A%20%5B%24injector%3Anomod%5D%20Module%20&apos;vizApp&apos;%20is%20not%20available!%20You%20either%20misspelled%20the%20module%20name%20or%20forgot%20to%20load%20it.%20If%20registering%20a%20module%20ensure%20that%20you%20specify%20the%20dependencies%20as%20the%20second%20argument.%0Ahttp%3A%2F%2Ferrors.angularjs.org%2F1.2.21%2F%24injector%2Fnomod%3Fp0%3DvizApp%0A%20%20%20%20at%20http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A78%3A12%0A%20%20%20%20at%20http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A1668%3A17%0A%20%20%20%20at%20ensure%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A1592%3A38)%0A%20%20%20%20at%20module%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A1666%3A14)%0A%20%20%20%20at%20http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A3852%3A22%0A%20%20%20%20at%20forEach%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A325%3A18)%0A%20%20%20%20at%20loadModules%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A3846%3A5)%0A%20%20%20%20at%20Object.createInjector%20%5Bas%20injector%5D%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FVizEditor%2Fwidget%2Flib%2Fangular%2Fangular.js%3F1409399175000%3A3786%3A11)%0A%20%20%20%20at%20workFn%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2FUnit%2520Test%2Fangular-mocks.js%3F1409399032000%3A1791%3A45)%0A%20%20%20%20at%20jasmine.Block.execute%20(http%3A%2F%2Flocalhost%3A9876%2Fbase%2Fnode_modules%2Fkarma-jasmine%2Flib%2Fjasmine.js%3F1407679747000%3A1145%3A17)
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:78:12
+    at C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3880:15
+    at forEach (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:325:18)
+    at loadModules (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3846:5)
+    at Object.createInjector [as injector] (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3786:11)
+    at workFn (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/angular-mocks.js:1791:45)
+</failure>
+      <failure type="">TypeError: Cannot read property &apos;sheets&apos; of undefined
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizApp.test.js:12:20)
+</failure>
+    </testcase>
+    <testcase name="Default bookname should be &apos;My first book&apos;" time="0.04" classname="Chrome 38.0.2125 (Windows Vista).Test vizReport -&gt; Report Container">
+      <failure type="">Expected &apos;&apos; to contain &apos;My first book&apos;.
+Error: Expected &apos;&apos; to contain &apos;My first book&apos;.
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:27:38)
+</failure>
+    </testcase>
+    <testcase name="We should have 3 tabs" time="0.014" classname="Chrome 38.0.2125 (Windows Vista).Test vizReport -&gt; Report Container">
+      <failure type="">TypeError: Cannot read property &apos;length&apos; of null
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:30:59)
+</failure>
+    </testcase>
+    <testcase name="Default background text of Toolbox should contain &apos;Toolbox&apos;" time="0.007" classname="Chrome 38.0.2125 (Windows Vista).Test vizReport -&gt; Toolbox">
+      <failure type="">Expected &apos;&apos; to contain &apos;Toolbox&apos;.
+Error: Expected &apos;&apos; to contain &apos;Toolbox&apos;.
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:37:38)
+</failure>
+    </testcase>
+    <testcase name="A linechart directive is existed" time="0.008" classname="Chrome 38.0.2125 (Windows Vista).Test Linechart directives -&gt; lineChart">
+      <failure type="">Expected &apos;&apos; not to be &apos;&apos;.
+Error: Expected &apos;&apos; not to be &apos;&apos;.
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:61:41)
+</failure>
+    </testcase>
+    <testcase name="A linechart should have 2 tabs" time="0.008" classname="Chrome 38.0.2125 (Windows Vista).Test Linechart directives -&gt; lineChart">
+      <failure type="">TypeError: Cannot read property &apos;length&apos; of null
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:64:51)
+</failure>
+    </testcase>
+    <testcase name="A linechart should have tab &quot;Config&quot;" time="0.009" classname="Chrome 38.0.2125 (Windows Vista).Test Linechart directives -&gt; lineChart">
+      <failure type="">Expected &apos;&apos; to contain &apos;Config&apos;.
+Error: Expected &apos;&apos; to contain &apos;Config&apos;.
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:67:38)
+</failure>
+    </testcase>
+    <testcase name="A linechart should have tab &quot;Visualization&quot;" time="0.011" classname="Chrome 38.0.2125 (Windows Vista).Test Linechart directives -&gt; lineChart">
+      <failure type="">Expected &apos;&apos; to contain &apos;Visualization&apos;.
+Error: Expected &apos;&apos; to contain &apos;Visualization&apos;.
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:70:38)
+</failure>
+    </testcase>
+    <testcase name="Visualization directive should exist" time="0.007" classname="Chrome 38.0.2125 (Windows Vista).Test Visualization directive"/>
+    <testcase name="vizchartconfig directive should exist" time="0.006" classname="Chrome 38.0.2125 (Windows Vista).Test vizchartconfig directive">
+      <failure type="">Expected &apos;&apos; not to be &apos;&apos;.
+Error: Expected &apos;&apos; not to be &apos;&apos;.
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:91:31)
+    at Object.invoke (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3940:17)
+    at workFn (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/angular-mocks.js:1795:20)
+</failure>
+    </testcase>
+    <testcase name="Default bookname should be &apos;My first book&apos;" time="0.009" classname="Chrome 38.0.2125 (Windows Vista).Test vizReport -&gt; Report Container">
+      <failure type="">Expected &apos;&apos; to contain &apos;My first book&apos;.
+Error: Expected &apos;&apos; to contain &apos;My first book&apos;.
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:27:38)
+</failure>
+    </testcase>
+    <testcase name="We should have 3 tabs" time="0.011" classname="Chrome 38.0.2125 (Windows Vista).Test vizReport -&gt; Report Container">
+      <failure type="">TypeError: Cannot read property &apos;length&apos; of null
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:30:59)
+</failure>
+    </testcase>
+    <testcase name="Default background text of Toolbox should contain &apos;Toolbox&apos;" time="0.005" classname="Chrome 38.0.2125 (Windows Vista).Test vizReport -&gt; Toolbox">
+      <failure type="">Expected &apos;&apos; to contain &apos;Toolbox&apos;.
+Error: Expected &apos;&apos; to contain &apos;Toolbox&apos;.
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:37:38)
+</failure>
+    </testcase>
+    <testcase name="A linechart directive is existed" time="0.016" classname="Chrome 38.0.2125 (Windows Vista).Test Linechart directives -&gt; lineChart">
+      <failure type="">Expected &apos;&apos; not to be &apos;&apos;.
+Error: Expected &apos;&apos; not to be &apos;&apos;.
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:61:41)
+</failure>
+    </testcase>
+    <testcase name="A linechart should have 2 tabs" time="0.009" classname="Chrome 38.0.2125 (Windows Vista).Test Linechart directives -&gt; lineChart">
+      <failure type="">TypeError: Cannot read property &apos;length&apos; of null
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:64:51)
+</failure>
+    </testcase>
+    <testcase name="A linechart should have tab &quot;Config&quot;" time="0.006" classname="Chrome 38.0.2125 (Windows Vista).Test Linechart directives -&gt; lineChart">
+      <failure type="">Expected &apos;&apos; to contain &apos;Config&apos;.
+Error: Expected &apos;&apos; to contain &apos;Config&apos;.
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:67:38)
+</failure>
+    </testcase>
+    <testcase name="A linechart should have tab &quot;Visualization&quot;" time="0.006" classname="Chrome 38.0.2125 (Windows Vista).Test Linechart directives -&gt; lineChart">
+      <failure type="">Expected &apos;&apos; to contain &apos;Visualization&apos;.
+Error: Expected &apos;&apos; to contain &apos;Visualization&apos;.
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:70:38)
+</failure>
+    </testcase>
+    <testcase name="Visualization directive should exist" time="0.006" classname="Chrome 38.0.2125 (Windows Vista).Test Visualization directive"/>
+    <testcase name="vizchartconfig directive should exist" time="0.009" classname="Chrome 38.0.2125 (Windows Vista).Test vizchartconfig directive">
+      <failure type="">Expected &apos;&apos; not to be &apos;&apos;.
+Error: Expected &apos;&apos; not to be &apos;&apos;.
+    at null.&lt;anonymous&gt; (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/widget/module/vizDirectives.test.js:91:31)
+    at Object.invoke (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/VizEditor/widget/lib/angular/angular.js:3940:17)
+    at workFn (C:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit%20Test/angular-mocks.js:1795:20)
+</failure>
+    </testcase>
+    <system-out><![CDATA[
 ]]></system-out>
     <system-err/>
   </testsuite>

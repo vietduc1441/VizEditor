@@ -3,24 +3,23 @@ module.exports = function(config) {
     // base path, that will be used to resolve files and exclude
     basePath: '',
 
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine','requirejs'],
 
     // list of files / patterns to load in the browser
     files: [
-	  './VizEditor/widget/module/charts/core.js',
-	  './VizEditor/widget/module/charts/base.js',
-	  './VizEditor/widget/module/charts/linechart.js',
-	  './VizEditor/widget/lib/*.js',
-      './VizEditor/widget/module/*.js',	  
-      './VizEditor/widget/*.js',
-	  './Unit Test/angular-mocks.js',
-	  './Unit Test/**/*.js',
-	  './VizEditor/widget/css/*.less',
-	  './VizEditor/widget/module/template/*.html'		
-    ],
+		'./VizEditor/widget/lib/angular/angular.js',
+		'./VizEditor/widget/lib/require/require.js',
+		{pattern:"./VizEditor/widget/module/charts/", include: false},
+		{pattern:"./Unit Test/**/*.js", include: true},
+		{pattern:"./VizEditor/widget/css/*.less", include: false},
+		{pattern:"./VizEditor/widget/module/template/*.html", include: false},
+		"./Unit Test/angular-mocks.js",
+		"./Unit Test/test-main.js",
+	],
 
     // list of files to exclude
     exclude: [
+			"./VizEditor/VizEditor/widget/main.js"
     ],
 
     // possible values: 'dots', 'progress'
@@ -106,6 +105,7 @@ module.exports = function(config) {
 	  'karma-less-preprocessor',
 	  'karma-junit-reporter',
       'karma-commonjs',
+	  'karma-requirejs',
 	  'karma-ng-html2js-preprocessor'
     ]
   });

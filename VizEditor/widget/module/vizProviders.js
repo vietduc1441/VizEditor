@@ -4,6 +4,7 @@ define(["angular"],function(angular){
             return {
                 getWatchColObj: function(scope){
                     var widget=scope.widget;
+                    if (!widget.data) return {};
                     if(widget.type==="LineChart"){
                         return { 
                            label: widget.label,
@@ -21,5 +22,5 @@ define(["angular"],function(angular){
                     return{};
                 }                
             };
-        })
-})
+        });
+});
