@@ -7,19 +7,19 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-		'./VizEditor/widget/lib/angular/angular.js',
-		'./VizEditor/widget/lib/require/require.js',
-		{pattern:"./VizEditor/widget/module/charts/", include: false},
-		{pattern:"./Unit Test/**/*.js", include: true},
-		{pattern:"./VizEditor/widget/css/*.less", include: false},
-		{pattern:"./VizEditor/widget/module/template/*.html", include: false},
-		"./Unit Test/angular-mocks.js",
-		"./Unit Test/test-main.js",
+		'./VizEditor/widget/lib/require/require.js',		
+		
+		{pattern:"./VizEditor/widget/module/**/*.js", included: false},//source files
+		{pattern:"./Unit Test/angular-mocks.js", included: false},//test files
+		{pattern:"./Unit Test/widget/module/*.test.js", included: false},//test files
+		{pattern:"./VizEditor/widget/css/*.less", included: false},//less files
+		{pattern:"./VizEditor/widget/module/template/*.html", included: false},//template html
+		"./Unit Test/test-main.js",//mai test
 	],
 
     // list of files to exclude
     exclude: [
-			"./VizEditor/VizEditor/widget/main.js"
+			"./VizEditor/widget/main.js"
     ],
 
     // possible values: 'dots', 'progress'
@@ -28,7 +28,7 @@ module.exports = function(config) {
 
     junitReporter: {
       // will be resolved to basePath (in the same way as files/exclude patterns)
-      outputFile: './VizEditor/test-results.xml'
+      outputFile: '../test-results.xml'
     },
 
     // web server port
@@ -72,12 +72,12 @@ module.exports = function(config) {
     // CLI --report-slower-than 500
     reportSlowerThan: 500,
 	preprocessors: {
-		'./VizEditor/widget/css/*.less':['less'],
-		'./VizEditor/widget/module/template/*.html':['ng-html2js']
+		'./widget/css/*.less':['less'],
+		'./widget/module/template/*.html':['ng-html2js']
 	},
 	lessPreprocessor: {
 		options: {
-			path: ['./VizEditor/widget/css'],
+			path: ['./widget/css'],
 			save: true
 	  }
 	},

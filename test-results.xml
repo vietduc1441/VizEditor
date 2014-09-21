@@ -1,12 +1,20 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Chrome 32.0.1700 (Windows Vista)" package="" timestamp="2013-12-29T22:17:46" id="0" hostname="vietduc1441-PC" tests="2" errors="0" failures="0" time="0.07">
+  <testsuite name="Chrome 38.0.2125 (Windows Vista)" package="" timestamp="2014-09-21T11:44:26" id="0" hostname="vietduc1441" tests="0" errors="1" failures="0" time="0">
     <properties>
-      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.68 Safari/537.36"/>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.24 Safari/537.36"/>
     </properties>
-    <testcase name="True should be True" time="0.025" classname="Chrome 32.0.1700 (Windows Vista).Test Karma setup:"/>
-    <testcase name="Default text should be &apos;Loading...&apos;" time="0.045" classname="Chrome 32.0.1700 (Windows Vista).Test vizReport"/>
-    <system-out><![CDATA[
+    <system-out><![CDATA[Chrome 38.0.2125 (Windows Vista) LOG: ERROR
+ 'There is no timestamp for /base/VizEditor/widget/module/widget/module/vizApp.test.js!',Chrome 38.0.2125 (Windows Vista) LOG: ERROR
+ 'There is no timestamp for /absoluteC:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit Test/widget/module/vizApp.test!',Chrome 38.0.2125 (Windows Vista) ERROR
+	Uncaught Error: Script error for: widget/module/vizApp.test
+	http://requirejs.org/docs/errors.html#scripterror
+	at C:/Users/vietduc1441/Documents/My%20Dropbox/Public/VizEditor/node_modules/requirejs/require.js:141
+,Chrome 38.0.2125 (Windows Vista) ERROR
+	Uncaught Error: Script error for: /absoluteC:/Users/vietduc1441/Documents/My Dropbox/Public/VizEditor/Unit Test/widget/module/vizApp.test
+	http://requirejs.org/docs/errors.html#scripterror
+	at C:/Users/vietduc1441/Documents/My%20Dropbox/Public/VizEditor/node_modules/requirejs/require.js:141
+
 ]]></system-out>
     <system-err/>
   </testsuite>

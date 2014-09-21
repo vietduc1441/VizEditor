@@ -1,5 +1,5 @@
-"use strict"
 define(["angular","vizDirectives"],function(angular){
+    "use strict"
     var vizApp= angular.module("vizApp",["vizDirectives"]);
     vizApp.controller("vizCtrl",function($scope){
     this.width="800px";
