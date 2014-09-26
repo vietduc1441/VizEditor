@@ -35,6 +35,7 @@ window.name = "NG_DEFER_BOOTSTRAP!";
 require(["angular","underscore","d3","vizApp"],function(angular,underscore,d3,vizApp){
     var $html = angular.element(document.getElementsByTagName('html')[0]);
 	angular.element().ready(function() {
-		angular.resumeBootstrap([vizApp['name']]);
+//            angular.bootstrap(document,[vizApp['name']]);
+            angular.resumeBootstrap([vizApp['name']]);
 	});
 });

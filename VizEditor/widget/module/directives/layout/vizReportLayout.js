@@ -1,6 +1,6 @@
 define(["angular",
     "directives/layout/vizSheetConfig",
-    "charts/ChartData"
+    "services/ChartData"
     ],function(angular){
     angular.module("vizDirectives.layout.vizReportLayout",["vizDirectives.layout.vizSheetConfig","DataExtractor"])
             .directive('vizReportLayout', function () {
@@ -10,20 +10,19 @@ define(["angular",
                            sheet:'='
                        },
                        controller: ["$scope","GetLineChartData", function($scope, getLineChartData){
-                            function insertChart(sourceType,atPos){
-                                $scope.sheet.widgets.push({id:null, 
+                            function insertChart(sourceType, atPos, extractProps){
+                                $scope.sheet.widgets.push(angular.extend({id:null, 
                                                         type: sourceType, 
                                                         x: atPos.x, 
-                                                        y: atPos.y, 
-                                                        data: $scope.sheet.data});
+                                                        y: atPos.y},
+                                                        extractProps));
                             }
                             $scope.onDrop = function(source,target,mouseEvent){
-                                var extractFunc= getLineChartData();
-                                
+                                var extractProps= getLineChartData($scope.sheet.data);
                                 var sourceType = source.getAttribute('viztype'),
                                     dropPosition =   {x:mouseEvent.offsetX,
                                                        y:mouseEvent.offsetY};
-                                $scope.$apply(insertChart(sourceType,dropPosition));
+                                $scope.$apply(insertChart(sourceType,dropPosition,extractProps));
                             };
                        }],
                        templateUrl: "widget/module/template/layout/vizReportLayout_tpl.html"
