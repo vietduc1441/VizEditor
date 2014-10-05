@@ -52,7 +52,7 @@ define(["angular"],function(angular){
                     };
                 };
             })
-            .factory("GetLineChartData",["MendixData",function(MendixDataProvider){
+            .factory("getLineChartData",["MendixData",function(MendixDataProvider){
                 return function(rawData){
                     var result={
                                 id:1,

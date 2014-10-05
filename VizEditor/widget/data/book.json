@@ -1,0 +1,6 @@
+{
+    "id": 1,
+    "bookname":"My first visualization",
+    "sheetids":[1,2,3],
+    "author": "DUC"
+}

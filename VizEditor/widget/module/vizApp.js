@@ -1,7 +1,15 @@
-define(["angular","vizDirectives","services/ChartData"],function(angular){
+define(["angular",
+        "vizDirectives",
+        "services/ChartData",
+        "services/generator",
+        "services/widgetData"],
+    function(angular){
     "use strict"
-    var vizApp= angular.module("vizApp",["vizDirectives"]);
-    vizApp.controller("vizCtrl",function($scope){
+    var vizApp= angular.module("vizApp",["vizDirectives","DataManager"]);
+    vizApp.controller("vizCtrl",["$scope","bookData", function($scope, bookData){
+        bookData.getBookData().then(function(data){
+            console.log(data);
+        }); 
         this.width="800px";
         this.height="600px";
         $scope.book={
@@ -9,11 +17,13 @@ define(["angular","vizDirectives","services/ChartData"],function(angular){
             sheetids:[1,2,3],
             author: "DUC"
         };
+        //TODO: separate into services
         $scope.sheets=[
-            {id:1, sheetname:"Sheet 1", content: "Sheet1 content", widgetids: [1], oql:{id: 1, amount: null, query: "oql query to get data" }},
+            {id:1, sheetname:"I am sheet 1", content: "Sheet1 content", widgetids: [1], oql:{id: 1, amount: null, query: "oql query to get data" }},
     //        {id:2, sheetname:"Sheet 2", content: "Sheet2 content", widgetids: [3, 5, 6], oql:{id: 2, amount: null, query: "oql query to get data" }},
            // {id:3, sheetname:"Sheet 3", content: "Sheet3 content", widgetids: [2, 8, 7], oql:{id: 3, amount: null, query: "oql query to get data" }}
         ];
+        
         $scope.widgets=[{id:1, type: "LineChart", x: 300, y: 10, width: 700, height: 500, 
                                label: "A multiple linechart", //name of the widget
                                shapes:["21","22"], //shapes of the point (circle for now)
@@ -54,7 +64,11 @@ define(["angular","vizDirectives","services/ChartData"],function(angular){
                 widget.data=sheet.data;
             });
         });
-    });
+    }]);
+    angular.module("Generator")
+            .config(["idGeneratorProvider",function(idGenerator){
+                idGenerator.setStartAt(1000);
+            }]);
     angular.module("DataExtractor")
             .config(["MendixDataProvider",function(mendixDataProvider){
             //fake mx func
