@@ -1,0 +1,14 @@
+[{
+    "id":1, 
+    "sheetname":"I am sheet 1", 
+    "content": "Sheet1 content", 
+    "widgetids": [1], 
+    "oql":{"id": 1, "amount": null, "query": "oql query to get data" }
+},
+{
+    "id":2, 
+    "sheetname":"I am sheet 2", 
+    "content": "Sheet1 content", 
+    "widgetids": [1], 
+    "oql":{"id": 1, "amount": null, "query": "oql query to get data" }
+}]

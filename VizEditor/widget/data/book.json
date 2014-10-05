@@ -1,0 +1,12 @@
+[{
+    "id": 1,
+    "bookname":"My 1st visualization",
+    "sheetids":[1],
+    "author": "DUC"
+},
+{
+    "id": 2,
+    "bookname":"My second visualization",
+    "sheetids":[1,2,3],
+    "author": "DUC"
+}]

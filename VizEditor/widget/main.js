@@ -2,6 +2,7 @@ require.config({
     baseUrl: 'widget/module',
 	paths: {
 		"angular": '../lib/angular/angular',
+                "angular-resource": '../lib/angular-resource/angular-resource.min',
 		"ui-bootstrap": '../lib/angular-bootstrap/ui-bootstrap',
 		"underscore": '../lib/underscore/underscore',
                 "d3":'../lib/d3/d3.min',//dont need to use shim for underscore and d3 as it register as amd module with a module name

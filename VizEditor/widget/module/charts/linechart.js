@@ -36,28 +36,25 @@ define(["charts/base","nvd3","d3"],
         }, this);
         return filteredData;
     };
-    
-    var lineChart= nv.models.lineChart();
-    lineChart.setData=function(data, series, category, category_need_sorted){
-      this.data= processRawData(data, series, category, category_need_sorted)||sinAndCos();  
-    },
-    lineChart.render=function(parentNode){
+    function setData(data, series, category, category_need_sorted){
+        this.data= processRawData(data, series, category, category_need_sorted)||sinAndCos();  
+    };
+    function render(parentNode){
         d3.select(parentNode)    //Select the <svg> element you want to render the chart in.   
             .datum(this.data)         //Populate the <svg> element with chart data...
             .call(this);          //Finally, render the chart!
         var self=this;
         nv.utils.windowResize(function() { self.update();});
     };
-    lineChart.resize=function(){
+    function resize(){
         this.update();
     };
-  
     /**
-     * 
-     * @param {object} configObj - Object {xAxis,yAxis}
-     * @returns {undefined}
-     */
-    lineChart.config=function(configObj){
+    * 
+    * @param {object} configObj - Object {xAxis,yAxis}
+    * @returns {undefined}
+    */
+    function config(configObj){
         this.margin({left: 50})  //Adjust this margins to give the x-axis some breathing room.
             .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!
             .transitionDuration(350)  //how fast do you want the lines to transition?
@@ -72,9 +69,15 @@ define(["charts/base","nvd3","d3"],
             .tickFormat(d3.format('.02f'));
 
     };
-    function createNew(){
-        
+    function addFunctions(lineChart){
+        lineChart.setData=setData;
+        lineChart.render=render;
+        lineChart.resize=resize;
+        lineChart.config=config;
         return lineChart;
+    }
+    function createNew(){
+        return addFunctions(nv.models.lineChart());
     };
     viz.LineChart={
         create:createNew
