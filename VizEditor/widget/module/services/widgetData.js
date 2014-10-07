@@ -29,6 +29,7 @@ define(["angular","angular-resource"],function(angular){
                                matchItems=[data];
                             }
                             result.resolve(matchItems);
+
                         })
                         .error(function(){
                             alert("Error when connecting to db");
