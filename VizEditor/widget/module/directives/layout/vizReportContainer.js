@@ -13,11 +13,14 @@ define(["angular",
                        return {
                                restrict: "EA",
                                scope:{
-                                   book:'=',
-                                   sheets:'=sheets'
+                                   book:'='
                                },
                                controller: function($scope){
                                    $scope.name='vizReportContainer';
+                                   $scope.bookId=-1;
+                               },
+                               link: function(scope, elm, attrs, ctr){
+                                   scope.bookId=attrs["bookId"];
                                },
                                templateUrl: "widget/module/template/layout/vizReportContainer_tpl.html"
                        };

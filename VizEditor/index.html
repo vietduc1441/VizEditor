@@ -10,12 +10,13 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="widget/css/vizStyle.css" >
+        <link rel="stylesheet" type="text/css" href="widget/css/nv.d3.css" >
         <link rel="stylesheet" type="text/css" href="widget/css/subdomain.css" >
         <link rel="stylesheet" type="text/css" href="widget/css/bootstrap.min.css" >
         <link rel="stylesheet" type="text/css" href="widget/lib/ng-grid/ng-grid.min.css" >
         <script data-main="widget/main.js" src="widget/lib/require/require.js"></script>
       </head>
     <body ng-app="vizApp" ng-controller="vizCtrl as ctrl">
-        <viz-report-container book="book" sheets="sheets"></viz-report-container>
+        <viz-report-container book="book" book-id="1"></viz-report-container>
     </body>
 </html>
