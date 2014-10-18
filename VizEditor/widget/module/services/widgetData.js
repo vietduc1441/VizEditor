@@ -54,6 +54,14 @@ define(["angular","angular-resource"],function(angular){
             .factory("widgetData",["WIDGETDATA_CONS","getJsonData","format",
                 function(widgetData,getJsonData,format){
                     return {
+                        getWidgetById: function(widgetId){
+                             return getJsonData(
+                                    widgetData,
+                                    format,
+                                    function(datum){
+                                        return widgetId===datum.id;
+                                    });
+                        },
                         getWidgets: function(widgetIds){
                             return getJsonData(
                                     widgetData,

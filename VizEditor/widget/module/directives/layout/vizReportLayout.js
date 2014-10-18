@@ -28,7 +28,7 @@ define(["angular",
                         $scope.$apply(insertChart(sourceType,dropPosition,extractProps));
                     };
                }],
-               templateUrl: "widget/module/template/layout/vizReportLayout_tpl.html"
+               templateUrl: "widget/module/directives/layout/vizReportLayout_tpl.html"
        };
     });            
 });

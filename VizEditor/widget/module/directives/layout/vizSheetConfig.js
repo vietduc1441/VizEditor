@@ -31,7 +31,7 @@ define(["angular",
                     link: function(scope, elm, attrs, ctr){
 
                     },
-                    templateUrl: "widget/module/template/layout/vizSheetConfig_tpl.html"
+                    templateUrl: "widget/module/directives/layout/vizSheetConfig_tpl.html"
                 };
             });
 });    

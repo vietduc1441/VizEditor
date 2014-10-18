@@ -48,7 +48,7 @@ define(["angular",
                         }
                     };
                 },
-                templateUrl: "widget/module/template/layout/vizToolbox_tpl.html"
+                templateUrl: "widget/module/directives/layout/vizToolbox_tpl.html"
             };
         }]);
 });

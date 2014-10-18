@@ -18,10 +18,12 @@ define(["angular",
                             sheet.data=sheetData[0].data;
                             q1.resolve({sheetData:sheetData});
                         });
+                        //TODO: only get widgetIds for sheet
                         widgetData.getWidgets(sheet.widgetids).then(function(widgets){
                             sheet.widgets=widgets;
                             q2.resolve({widgets:widgets});
                         });
+                        //TODO: dont need this, send sheet.data to widget
                         $q.all([q1.promise,q2.promise]).then(function(resutls){
                             sheet.widgets.forEach(function(widget){
                                 widget.data=sheet.data;
@@ -54,7 +56,7 @@ define(["angular",
                                link: function(scope, elm, attrs, ctr){
                                    scope.bookId=parseInt(attrs["bookId"]);
                                },
-                               templateUrl: "widget/module/template/layout/vizReportContainer_tpl.html"
+                               templateUrl: "widget/module/directives/layout/vizReportContainer_tpl.html"
                        };
                     });
 });
