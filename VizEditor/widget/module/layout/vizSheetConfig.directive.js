@@ -1,7 +1,7 @@
 define(["angular",        
         "lib/angular-bootstrap/ui-bootstrap-tpls.min",
         "lib/ng-grid/ng-grid-2.0.12.min",
-        "directives/utils/utils"
+        "utils/utils.module"
         ],function(angular){
     angular.module("vizDirectives.layout.vizSheetConfig",["ui.bootstrap","utils","ngGrid"])
             .directive("vizSheetConfig",function(){
@@ -31,7 +31,7 @@ define(["angular",
                     link: function(scope, elm, attrs, ctr){
 
                     },
-                    templateUrl: "widget/module/directives/layout/vizSheetConfig_tpl.html"
+                    templateUrl: "widget/module/layout/vizSheetConfig_tpl.html"
                 };
             });
 });    

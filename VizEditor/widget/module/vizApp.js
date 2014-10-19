@@ -1,7 +1,7 @@
 define(["angular",
         "vizDirectives",
-        "services/ChartData",
-        "services/generator"
+        "services/ChartData.service",
+        "services/generator.service"
         ],
     function(angular){
     "use strict"

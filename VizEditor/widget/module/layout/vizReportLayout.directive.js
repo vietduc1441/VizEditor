@@ -1,7 +1,7 @@
 define(["angular",
-    "directives/layout/vizSheetConfig",
-    "services/ChartData",
-    "services/generator"    
+    "layout/vizSheetConfig.directive",
+    "services/ChartData.service",
+    "services/generator.service"    
     ],function(angular){
     angular.module("vizDirectives.layout.vizReportLayout",
         ["vizDirectives.layout.vizSheetConfig","DataExtractor","Generator"])
@@ -28,7 +28,7 @@ define(["angular",
                         $scope.$apply(insertChart(sourceType,dropPosition,extractProps));
                     };
                }],
-               templateUrl: "widget/module/directives/layout/vizReportLayout_tpl.html"
+               templateUrl: "widget/module/layout/vizReportLayout_tpl.html"
        };
     });            
 });

@@ -1,15 +1,15 @@
 "use strict";
 define(["angular",
-    "directives/utils/utils",
+    "utils/utils.module",
     "vizProviders",
-    "directives/layout/layout",
-    "directives/chart/chart",
+    "layout/layout.module",
+    "widget/widget.directive",
     "services/widgetData"
     
     ],
     function(angular){
         angular.module('vizDirectives', ['utils','vizService',
                                         'vizDirectives.layout',
-                                        'vizDirectives.chart'
+                                        'vizDirectives.widget'
                                         ]);
 });

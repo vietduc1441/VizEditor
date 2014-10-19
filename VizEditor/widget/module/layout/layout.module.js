@@ -1,7 +1,7 @@
 define(["angular",
-        "directives/layout/vizReportContainer",
-        "directives/layout/vizToolBox",
-        "directives/layout/vizReportLayout"
+        "layout/vizReportContainer.directive",
+        "layout/vizToolBox.directive",
+        "layout/vizReportLayout.directive"
     ],function(angular){
     //http://angular-ui.github.io/bootstrap/
     angular.module('vizDirectives.layout',[

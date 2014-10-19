@@ -1,7 +1,7 @@
 define(["angular",
-        "directives/utils/resizer",
-        "directives/utils/draggable",
-        "directives/utils/stopEvent"
+        "utils/resizer.directive",
+        "utils/draggable.directive",
+        "utils/stopEvent.directive"
         ],
     function(angular){
         angular.module('utils',["utils.resizer",

@@ -1,23 +1,23 @@
 "use strict";
 define(["angular",
-    "directives/utils/utils",
-    "directives/chart/chart.visualization",
-    "directives/chart/chart.config",
+    "utils/utils.module",
+    "widget/widgetVisualization.directive",
+    "widget/widgetConfig.directive",
     "services/widgetData"
     ],
     function(angular){
-        angular.module('vizDirectives.chart', [
+        angular.module('vizDirectives.widget', [
                                         'utils',
                                         'vizService',
-                                        'vizDirectives.chart.config',
-                                        'vizDirectives.chart.visualization'
+                                        'vizDirectives.widget.config',
+                                        'vizDirectives.widget.visualization'
                                         ])
         .directive('ngChart',function(){
                     return{
                         restrict:'EA',   
                         scope:{
                             widgetId:"@id",
-                            data:"@data"
+                            data:"="
                         },
                         controller: function($scope, widgetData){
                             var widget,
@@ -44,7 +44,7 @@ define(["angular",
                                 originalWidth+=offsetWidth;
                             };
                         },
-                        templateUrl:"widget/module/directives/chart/vizChart_tpl.html"
+                        templateUrl:"widget/module/widget/vizChart_tpl.html"
                     };
                 });                                      
     });

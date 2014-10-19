@@ -1,6 +1,6 @@
 define(["angular",
         "constants/dictShapeType",
-        "directives/utils/utils",
+        "utils/utils.module",
         "lib/angular-bootstrap/ui-bootstrap-tpls.min",
         "lib/lvl-drag-drop",
         "lib/lvl-uuid"],function(angular){
@@ -48,7 +48,7 @@ define(["angular",
                         }
                     };
                 },
-                templateUrl: "widget/module/directives/layout/vizToolbox_tpl.html"
+                templateUrl: "widget/module/layout/vizToolbox_tpl.html"
             };
         }]);
 });

@@ -1,9 +1,9 @@
 "use strict";
 define(["angular",
-    "directives/utils/utils"
+    "utils/utils.module"
     ],
     function(angular){
-        angular.module('vizDirectives.chart.config', [
+        angular.module('vizDirectives.widget.config', [
                                         'utils'
                                         ])
         .directive('vizChartConfig',function(){//TODO: test
@@ -29,7 +29,7 @@ define(["angular",
                       }
                   };
                 },
-                templateUrl: 'widget/module/directives/chart/vizChart_config_tpl.html'
+                templateUrl: 'widget/module/widget/vizChart_config_tpl.html'
             };
         });                               
     });

@@ -1,11 +1,11 @@
 "use strict";
 define(["angular",
-    "directives/utils/utils",
+    "utils/utils.module",
     "vizProviders",
     "services/widgetData"
     ],
     function(angular){
-        angular.module('vizDirectives.chart.visualization', [
+        angular.module('vizDirectives.widget.visualization', [
                                         'utils'
                                         ])
         .directive('visualization', function(changeMonitor){
@@ -17,7 +17,10 @@ define(["angular",
                                         yAxis: widget.y_title,
                                         label: widget.label,
                                         value: widget.value});
-                            chart.setData(widget.data, widget.selected_series, widget.selected_categories&&widget.selected_categories[0], widget.category_need_sorted);
+                            chart.setData(widget.data, 
+                                        widget.selected_series, 
+                                        widget.selected_categories&&widget.selected_categories[0], 
+                                        widget.category_need_sorted);
                             chart.render(atNode);
                             scope.$watch('widget.width+widget.height',function(){
                                 chart.resize();
