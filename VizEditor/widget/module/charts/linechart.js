@@ -79,7 +79,7 @@ define(["charts/base","nvd3","d3"],
     function createNew(){
         return addFunctions(nv.models.lineChart());
     };
-    viz.LineChart={
+    viz.linechart={
         create:createNew
     };
     return viz;    

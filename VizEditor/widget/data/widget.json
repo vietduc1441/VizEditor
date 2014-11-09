@@ -1,5 +1,5 @@
 [       {"id":1, 
-        "type": "LineChart", 
+        "type": "linechart", 
         "x": 300, "y": 10, "width": 700, "height": 500, 
         "label": "A multiple linechart", 
         "shapes":["21","22"], 
@@ -15,7 +15,7 @@
 
         {
         "id":2, 
-        "type": "PieChart", 
+        "type": "piechart", 
         "x": 120, "y": 250, "width": 200, "height": 200, 
         "label":"order", 
         "value": "product0"

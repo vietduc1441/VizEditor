@@ -33,6 +33,21 @@ define(["angular",
                     templateUrl: "widget/module/layout/vizReportContainer_tpl.html"
             };
              //////////////////////////////////////////////////////////
+            /**
+             * Note: actually, at this step, everything is retrieved.
+             * it would be divided in 2 step
+             * 1. when has bookId, get  book and sheetIds 
+             * 2. For each sheetId, get sheet and data and widgetIds
+             * 3. Send data and widgetid to create a widget
+             * @param {type} newVal
+             * @param {type} oldVal
+             * @param {type} scope
+             * @param {type} bookData
+             * @param {type} sheetData
+             * @param {type} widgetData
+             * @param {type} $q
+             * @returns {undefined}
+             */
             function getBookData(newVal, oldVal, scope, bookData, sheetData, widgetData, $q){
                 if (newVal===-1) return;
                 bookData.getBookById(scope.bookId).then(function(book){
@@ -61,6 +76,7 @@ define(["angular",
                     });
                 });  
             };
+            
             ///////////////////////////////////////////////////////////
         };
 });

@@ -9,6 +9,7 @@ define(["angular",
                                         'utils'
                                         ])
         .directive('visualization', function(changeMonitor){
+            ////////////////////////////////////////////////////////////////////
             function loadTemplateAndConfigChart(scope, widget, chart, atNode){
                 require(["charts/"+widget.type],
                         function(VizChart){                        
@@ -43,6 +44,7 @@ define(["angular",
                             scope.$digest();
                         });
                     };
+            /////////////////////////////////////////////////////////////////////
             return{
                 restrict: 'EA',
                 scope: {
@@ -54,16 +56,15 @@ define(["angular",
                         width: widget&&widget.width||200+'px',
                         height: widget&&widget.height||200+'px'
                     };
-
                 },
                 link: function(scope, element, attrs, ctr){
                     var chart=null;
-                    scope.$watch("widget.type",function(oldVal,newVal, scope){
-                            if (!oldVal) return;
+                    scope.$watch("widget.type",function(newVal,oldVal, scope){
+                            if (!newVal) return;
                             loadTemplateAndConfigChart(scope, scope.widget, chart, element.find("svg")[0]);
                     });
                 },
-                template: "<div ><svg ng-style='chartstyle'></svg></div>"
+                template: "<div><svg ng-style='chartstyle'></svg></div>"
             };
         });                          
     });

@@ -11,6 +11,7 @@ require.config({
                 "nvd3":'../lib/nvd3/nv.d3',
                 "jquery":['http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min',
                             '../lib/jquery/dist/jquery.min'],
+                "text":"../lib/requirejs-text/text"//otherwise cannot work by ../lib/...
         //        "angular-nvd3":'../lib/angularjs-nvd3-directives'
 	},
 	shim: {
